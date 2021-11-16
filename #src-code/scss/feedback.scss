@@ -1,0 +1,173 @@
+.feedback,
+.newsletter {
+	background-color: $color_5;
+}
+
+.feedback-wrapper,
+.newsletter-wrapper {
+	position: relative;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.feedback-form,
+.newsletter-form {
+	text-align: left;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	&__btn {
+		float: right;
+		margin-top: 3em;
+	}
+	&__checkbox {
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__flex-container-space-between {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__checkbox-container {
+		// display: flex;
+		// background-color: $color_11;
+		// align-items: flex-start;
+		margin: 1em 0 0 0.8em;
+
+		.input:checked + .label::after {
+			background-color: $color_7;
+			transform: scale(1);
+		}
+		.input {
+			display: none;
+		}
+		.label {
+			position: relative;
+			// line-height: 100%;
+			color: $color_7;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			margin-left: 2em;
+		}
+		.label::before {
+			// ? белый чекбокс
+			content: "";
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			left: -25px;
+			top: 0;
+			background-color: $color_8;
+			border-radius: 3px;
+		}
+		.label::after {
+			// ? желтая точка в чекбоксе
+			content: "";
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			left: -22px;
+			top: 3px;
+			border-radius: 3px;
+			background-color: $color_2;
+			transform: scale(0);
+			transition: all 0.1s ease 0s;
+		}
+	}
+
+	&__input-container {
+		position: relative;
+		width: 100%;
+		margin-top: 2em;
+	}
+	.input-container-half-width {
+		width: calc(50% - 10px);
+	}
+	&__input {
+		font-family: "Ubuntu-Regular", sans-serif;
+		font-size: 1em;
+		width: 100%;
+		height: 3em;
+		background-color: $color_8;
+		color: $color_7;
+		padding: 0.3em 1em 0;
+		border-radius: 3px;
+		border: 0;
+		outline: 0;
+	}
+	&__input-message {
+		padding: 1em 1em 0;
+		height: 7em;
+		resize: none;
+	}
+	&__cut {
+		position: absolute;
+		background-color: $color_5;
+		left: 8px;
+		top: -24px;
+		height: 24px;
+		border-radius: 12px;
+		transform: translateY(0);
+		transition: transform 200ms;
+	}
+	.cut-name-width {
+		width: 80px;
+	}
+	.cut-email-width {
+		width: 50px;
+	}
+	.cut-message-width {
+		width: 90px;
+	}
+
+	&__placeholder {
+		position: absolute;
+		color: rgba($color: $color_7, $alpha: 0.5);
+		top: 1em;
+		left: 1em;
+		pointer-events: none;
+		transition: transform 0.3s ease, color 0.3s ease;
+		transform-origin: 0 0;
+	}
+	&__input:focus ~ &__cut,
+	&__input:not(:placeholder-shown) ~ &__cut {
+		transform: translateY(10px);
+	}
+
+	&__input:focus ~ &__placeholder,
+	&__input:not(:placeholder-shown) ~ &__placeholder {
+		transform: translateY(-25px) scale(0.8);
+	}
+	&__input:not(:placeholder-shown) ~ &__placeholder {
+		color: $color_7;
+	}
+	&__input:focus ~ &__placeholder {
+		color: $color_7;
+	}
+	&__input.__uncorrect:focus ~ &__placeholder {
+		color: $color_8;
+	}
+}
+
+.__sending {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+@media (max-width: 601px) {
+	// ? когда монитор меньше 601px
+	.feedback-form {
+		.input-container-half-width {
+			width: 100%;
+		}
+		&__btn {
+			// float: right;
+			float: unset;
+		}
+	}
+}

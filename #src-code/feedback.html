@@ -1,0 +1,49 @@
+<div class="feedback">
+
+	<div class="feedback-wrapper padding-page content">
+
+
+		<h4 id="feedback-subline-info">Напишите нам, мы рады помочь</h4>
+
+		<form id="feedback-form" action="#" class="feedback-form">
+
+
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-name" name="name" class="feedback-form__input __req __name" type="text"
+					placeholder=" " />
+				<div class="feedback-form__cut cut-name-width"></div>
+				<label for="feedback__client-name" class="feedback-form__placeholder">Ваше
+					имя</label>
+			</div>
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-email-address" name="email" class="feedback-form__input __req __email"
+					type="text" placeholder=" " />
+				<div class="feedback-form__cut cut-email-width"></div>
+				<label for="feedback__client-email-address" class="feedback-form__placeholder">Email</label>
+			</div>
+			<div class="feedback-form__input-container">
+				<textarea id="feedback__message" name="message"
+					class="feedback-form__input feedback-form__input-message  __req __message" cols="100500"
+					placeholder=" "></textarea>
+				<div class="feedback-form__cut cut-message-width"></div>
+				<label for="feedback__message" class="feedback-form__placeholder">Сообщение</label>
+			</div>
+			<div class="feedback-form__checkbox-container">
+				<input id="feedback__checkbox" type="checkbox" checked class="input __req __chackbox">
+				<label for="feedback__checkbox" class="label s-light">
+					<span>Согласен на обработку данных в соответствии с&#160;<a href="policy.html">политикой
+							конфиденциальности</a></span>
+				</label>
+			</div>
+
+
+			<input type="hidden" id="token" name="token">
+
+
+			<button type="submit" class="feedback-form__btn">
+				Отправить
+			</button>
+		</form>
+
+	</div>
+</div>

@@ -1,0 +1,109 @@
+.rich-banner {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: $color_6;
+
+	&__video-cont,
+	&__title-cont {
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__video {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($color: $color_7, $alpha: 0.35);
+			// background-image: url(../img/pattern-spot.svg);
+			// background-image: url(../img/pattern-matrix.svg);
+			// background-repeat: repeat;
+			// mix-blend-mode: difference;
+		}
+		img {
+			position: absolute;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+		video {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__title-cont {
+		pointer-events: none;
+		z-index: 2;
+	}
+	&__content {
+		position: relative;
+		display: flex;
+		height: 100%;
+		color: $color_1;
+	}
+	&__content-block {
+		pointer-events: painted;
+		display: flex;
+		align-items: center;
+		width: 50%;
+		height: 100%;
+		nav {
+			margin-top: 1rem;
+			width: 300px;
+			display: flex;
+			justify-content: space-between;
+		}
+		li {
+			padding: 1rem 0;
+			a {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+	.building {
+		position: relative;
+		// pointer-events: none;
+		&:before {
+			content: "";
+			position: absolute;
+			width: 25px;
+			height: 16px;
+			right: 0;
+			top: 0;
+			background-image: url(../img/icon-beta.svg);
+		}
+	}
+}
+
+@media (max-width: 769px) {
+	// ? когда монитор меньше 769px
+	.rich-banner {
+		&__video {
+			position: relative;
+			width: 100%;
+			height: 50%;
+		}
+		&__content {
+			flex-direction: column;
+		}
+		&__content-block {
+			width: 100%;
+			height: 50%;
+			nav {
+				display: none;
+			}
+		}
+	}
+}

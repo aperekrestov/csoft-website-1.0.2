@@ -1,0 +1,130 @@
+.swiper {
+	position: relative;
+
+	.swiper-button-prev {
+		left: -6px;
+	}
+	.swiper-button-next {
+		right: -8px;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		top: calc(50% - 3rem / 2);
+		&:after {
+			transition: all 0.3s ease;
+			color: $color_6;
+			font-size: 16px;
+		}
+		&:hover {
+			&:after {
+				color: $color_2;
+			}
+		}
+	}
+	.swiper-pagination-bullet {
+		background-color: $color_7;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: $color_2;
+			opacity: 1;
+		}
+	}
+	.swiper-pagination-fraction {
+		font-size: 12px; //? 0.875rem
+		font-weight: 400;
+		color: $color_7;
+	}
+}
+.swiper-solution {
+	.swiper-slide {
+		display: flex;
+		align-items: center;
+	}
+	.swiper-pagination {
+		position: relative;
+		display: none;
+		// todo настроить стиль буллетов
+	}
+	&__picture {
+		position: relative;
+		width: 618px;
+		height: 452px;
+		margin-right: 1rem;
+		img {
+			width: contain;
+			height: contain;
+		}
+	}
+	&__content {
+		padding-left: 3rem;
+	}
+}
+.swiper-vendor {
+	.swiper-slide {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+}
+
+@media (max-width: 1300px) {
+	// ? когда монитор меньше 1300px
+	.swiper-solution {
+		&__picture {
+			width: calc(618px / 1.25);
+			height: calc(452px / 1.25);
+			img {
+				width: calc(618px / 1.25);
+				height: calc(452px / 1.25);
+			}
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	// ? когда монитор меньше 1025px
+	.swiper-solution {
+		&__picture {
+			width: calc(618px / 1.5);
+			height: calc(452px / 1.5);
+			img {
+				width: calc(618px / 1.5);
+				height: calc(452px / 1.5);
+			}
+		}
+	}
+}
+
+@media (max-width: 769px) {
+	// ? когда монитор меньше 769px
+	.swiper-solution {
+		margin-bottom: 4rem;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			display: none;
+		}
+		.swiper-pagination {
+			display: block;
+		}
+		.swiper-slide {
+			flex-direction: column-reverse;
+			padding-bottom: 3rem;
+		}
+		&__content {
+			padding-left: 0;
+			text-align: center;
+		}
+		&__picture {
+			width: 100%;
+			height: auto;
+			padding-right: 0;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 481px) {
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- @import "menu.html" -->
+
+		<div class="rich-banner">
+
+			<div class="rich-banner__video-cont">
+				<div id="engineering-video-wrapper" class="rich-banner__video">
+					<img src="vid/engineering.jpg" alt="">
+					<video id="engineering-video" pip="false" muted loop>
+						<source type="video/webm" src="vid/engineering.webm">
+						<source type="video/mp4" src="vid/engineering.mp4">
+					</video>
+				</div>
+				<div id="building-video-wrapper" class="rich-banner__video">
+					<img src="vid/building.jpg" alt="">
+					<video id="building-video" pip="false" muted loop>
+						<source type="video/webm" src="vid/building.webm">
+						<source type="video/mp4" src="vid/building.mp4">
+					</video>
+				</div>
+			</div>
+
+
+
+			<div class="rich-banner__title-cont">
+				<header class="rich-banner__content content">
+					<div id="engineering-container" class="rich-banner__content-block padding-page">
+						<div class="engineering">
+							<h2>Машиностроение</h2>
+							<h3>Мета-заголовок (70-80 символов с пробелами) желательно <br>не используя символы . !
+								?
+							</h3>
+							<form action="engineering.html" method="get">
+								<button>
+									Подробнее
+								</button>
+							</form>
+							<nav>
+								<ul>
+									<li>
+										<a href="solution.html">
+											<span class="icon-solution"></span>
+											<h3>Решения</h3>
+										</a>
+									</li>
+									<li>
+										<a href="price.html">
+											<span class="icon-price"></span>
+											<h3>Цены</h3>
+										</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="news.html">
+											<span class="icon-news"></span>
+											<h3>Новости</h3>
+										</a>
+									</li>
+									<li>
+										<a href="contacts.html">
+											<span class="icon-contacts"></span>
+											<h3>Контакты</h3>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+
+					<div id="building-container" class="rich-banner__content-block padding-page">
+						<div class="building">
+							<h2>Строительство</h2>
+							<h3>Мета-заголовок (70-80 символов с пробелами) желательно <br>не используя символы . !
+								?
+							</h3>
+							<form action="#" method="get">
+								<button>
+									Подробнее
+								</button>
+							</form>
+							<nav>
+								<ul>
+									<li>
+										<a href="solution.html">
+											<span class="icon-solution"></span>
+											<h3>Решения</h3>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="icon-price"></span>
+											<h3>Цены</h3>
+										</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="#">
+											<span class="icon-news"></span>
+											<h3>Новости</h3>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="icon-contacts"></span>
+											<h3>Контакты</h3>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>
+		</div>
+
+		<!-- @import "footer.html" -->
+
+	</div>
+
+</body>
+
+</html>
