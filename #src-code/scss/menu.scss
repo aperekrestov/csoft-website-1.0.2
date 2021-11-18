@@ -2,12 +2,17 @@ body._lock {
 	overflow: hidden;
 }
 .menu__body._active {
-	display: block;
+	display: flex; // block
 }
 .menu__body._show-list {
 	.menu__body-home-namvigation li {
 		pointer-events: painted;
+		display: flex;
 		opacity: 1;
+	}
+	.icon-polygon {
+		// opacity: 0;
+		transform: scaleY(-1);
 	}
 }
 
@@ -104,7 +109,6 @@ body._lock {
 	&__body {
 		display: none;
 		z-index: 2;
-		width: 100%;
 		height: calc(100vh - 70px); //! минус высота верхней панели меню
 		background-color: $color_4;
 		overflow: auto;
@@ -124,28 +128,30 @@ body._lock {
 	}
 	&__body-wrapper {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		width: 100%;
 		max-width: 1200px;
-		height: 100%;
 		margin: 0 auto;
-		padding-top: 140px;
-		padding-bottom: 210px;
 	}
 
 	&__body-wrapper-top {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
-		width: 100%;
+	}
+
+	.icon-arrow {
+		left: 30px;
+	}
+	&__body-home-namvigation {
+		margin-top: -3px;
 	}
 	&__body-home-namvigation li {
 		pointer-events: none;
+		display: none;
 		opacity: 0;
-		position: absolute;
-		margin: 0.2rem 0;
+		padding-bottom: 0.3rem;
 		transition: all 0.3s ease;
+		position: absolute;
 	}
 	&__body-home-namvigation > li {
 		position: relative;
@@ -153,80 +159,74 @@ body._lock {
 		align-items: center;
 		opacity: 1;
 		pointer-events: painted;
+		display: flex;
+	}
+
+	&__body-wrapper-center {
+		min-height: 90%;
+		display: flex;
+		align-items: center;
+		// background-color: $color_2;
 	}
 
 	&__body-wrapper-bottom {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		width: 100%;
-	}
-	&__body-wrapper-center {
-		position: relative;
-		width: 100%;
-		padding: 70px 0;
-		a {
-			text-decoration: none;
-		}
 	}
 }
 .menu__list {
-	margin-left: 50%;
+	position: relative;
+	display: inline-block;
+	margin-left: 38%;
+	padding: 70px 0;
+	// background-color: $color_11;
+	a {
+		text-decoration: none;
+	}
 }
 .menu__list > li {
 	font-size: 2rem;
-	line-height: 2em;
+	margin-bottom: 2rem;
 	text-transform: uppercase;
+	.menu__link {
+		transition: all 0.5s ease;
+		margin-left: 1.6rem;
+	}
+	.menu__sub-link {
+		transition: all 0.5s ease;
+		margin-left: 2.8rem;
+	}
+	&:hover {
+		.menu__link {
+			margin-left: 0rem;
+		}
+		.menu__sub-link {
+			margin-left: 3rem;
+		}
+	}
+	.menu__sub-link:hover {
+		margin-left: 4.4rem;
+	}
 }
 .menu__sub-list {
 	display: flex;
-	pointer-events: none;
-	transition: all 0.5s ease;
-	opacity: 0;
 	flex-direction: column;
 	justify-content: center;
-	position: absolute;
-	right: 50%;
-	top: 0;
 	height: 100%;
 	font-size: 0.5625em; //? 18px
 	line-height: 2em;
 	text-transform: none;
-	text-align: right;
-	.menu__sub-link {
-		padding-right: 40px;
-		&:hover {
-			padding-right: 10px;
-		}
-	}
+	margin: 0.6rem;
 }
 
-@media (max-height: 1024px) {
-	// ? когда ВЫСОТА меньше 1024px
+@media (max-height: 1000px) {
+	// ? когда монитор короче 1000px
 	.menu {
-		&__body-wrapper {
-			padding-top: 40px;
-			padding-bottom: 70px;
+		&__body-wrapper-bottom {
+			//? чтобы в мобильном браузере не перекрывался нижни элемент панелью браузера
+			padding-bottom: 140px;
 		}
-	}
-}
-
-@media (min-width: 769px) {
-	// ? когда монитор больше 769px
-	.menu__list > li {
-		.menu__link {
-			transition: all 0.3s ease;
-			padding-left: 40px;
-		}
-		&:hover {
-			.menu__link {
-				padding-left: 10px;
-			}
-		}
-	}
-	.menu__list > li:hover .menu__sub-list {
-		opacity: 1;
-		pointer-events: auto;
 	}
 }
 
@@ -245,22 +245,9 @@ body._lock {
 		&__body {
 			height: calc(100vh - 50px); //! минус высота верхней панели меню
 		}
-		&__body-wrapper {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-		&__body-wrapper-center {
-			justify-content: center;
-			padding: 60px 0; //47
-		}
-		&__body-wrapper-bottom {
-			//? чтобы в мобильном браузере не перекрывался нижни элемент панелью браузера
-			padding-bottom: 90px;
-		}
 	}
 	.menu__list {
-		margin-left: 0;
-		text-align: center;
+		margin-left: 27%;
 	}
 }
 
@@ -277,12 +264,7 @@ body._lock {
 			flex-direction: column;
 			align-items: flex-start;
 		}
-		&__body-wrapper-center {
-			justify-content: unset;
-		}
 		&__body-wrapper-bottom {
-			//? чтобы в мобильном браузере не перекрывался нижни элемент панелью браузера
-			padding-bottom: 140px;
 			flex-direction: column;
 			align-items: flex-start;
 			cite {
@@ -291,11 +273,6 @@ body._lock {
 		}
 	}
 	.menu__list {
-		text-align: left;
-	}
-	.menu__list > li {
-		font-size: 1.5em;
-		line-height: 2em;
-		margin-left: 2em;
+		margin-left: 4%;
 	}
 }

@@ -2,6 +2,7 @@
 if (document.querySelector('.menu__btn')) {
 	const MENU_BTN = document.querySelector('.menu__btn')
 	const MENU_BODY = document.querySelector('.menu__body')
+	const MENU_HOME_NAVIGATION = document.querySelector('.menu__body-home-namvigation')
 	const MENU_HOME_NAV_POLIGON = document.getElementById('menu__body-home-namvigation-poligon')
 	const MENU_LIST_BTNS = document.querySelectorAll('.menu__list>li')
 	let menuClicked = false
@@ -16,9 +17,29 @@ if (document.querySelector('.menu__btn')) {
 		}
 	})
 
+	// for (let i = 0; i < MENU_LIST_BTNS.length; i++) {
+	// 	MENU_LIST_BTNS[i].addEventListener('mouseenter', e => {
+	// 		MENU_LIST_BTNS[i].classList.add('_active')
+	// 		console.log('over');
+	// 	})
+	// 	MENU_LIST_BTNS[i].addEventListener('mouseleave', e => {
+	// 		MENU_LIST_BTNS[i].classList.remove('_active')
+	// 		console.log('leave');
+	// 	})
+	// }
+
 	MENU_HOME_NAV_POLIGON.addEventListener('click', e => {
 		MENU_HOME_NAV_POLIGON.classList.toggle('_show-list')
 		MENU_BODY.classList.toggle('_show-list')
+	})
+
+	MENU_HOME_NAVIGATION.addEventListener('mouseenter', e => {
+		MENU_HOME_NAV_POLIGON.classList.add('_show-list')
+		MENU_BODY.classList.add('_show-list')
+	})
+	MENU_HOME_NAVIGATION.addEventListener('mouseleave', e => {
+		MENU_HOME_NAV_POLIGON.classList.remove('_show-list')
+		MENU_BODY.classList.remove('_show-list')
 	})
 
 	function iconMenuAnimation() {

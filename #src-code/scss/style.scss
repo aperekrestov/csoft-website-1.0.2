@@ -192,6 +192,10 @@ button {
 	display: flex;
 	align-items: center;
 }
+.flex-h-start {
+	display: flex;
+	align-items: flex-start;
+}
 .flex-w-center {
 	display: flex;
 	justify-content: center;
