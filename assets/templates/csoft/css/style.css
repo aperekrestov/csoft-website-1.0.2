@@ -1098,7 +1098,6 @@ body._lock {
   flex-direction: column;
   font-size: 3rem;
   font-weight: 700;
-  max-width: 600px;
   text-transform: uppercase;
   margin-top: 60px;
   word-wrap: break-word;
@@ -1125,7 +1124,6 @@ body._lock {
   flex-direction: column;
   font-size: 3rem;
   font-weight: 700;
-  max-width: 600px;
   text-transform: uppercase;
   margin-top: 60px;
   word-wrap: break-word;
