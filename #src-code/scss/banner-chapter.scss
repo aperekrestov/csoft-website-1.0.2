@@ -57,6 +57,7 @@
 }
 
 .infographic-item {
+	// background-color: $color_2;
 	display: flex;
 	flex-direction: column;
 	// align-items: center;
@@ -84,7 +85,6 @@
 	.banner-chapter {
 		&__info-cont {
 			width: 400px;
-			padding-left: 2rem;
 		}
 	}
 	.infographic-item {
@@ -96,7 +96,6 @@
 	.banner-chapter {
 		&__info-cont {
 			margin-top: 4rem;
-			padding-left: 1rem;
 			width: 300px;
 		}
 	}
