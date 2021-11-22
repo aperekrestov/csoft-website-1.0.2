@@ -16,6 +16,59 @@
 	}
 }
 
+.icon-32x32 {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	margin-right: 0.5rem;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		transition: all 0.3s ease;
+	}
+	&:after {
+		opacity: 0;
+	}
+}
+
+.icon-policy {
+	&:before {
+		background-image: url(../img/icon-policy.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-policy-color.svg);
+		opacity: 0;
+	}
+	&:hover {
+		&:before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+.icon-agreement {
+	&:before {
+		background-image: url(../img/icon-agreement.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-agreement-color.svg);
+		opacity: 0;
+	}
+	&:hover {
+		&:before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
 .icon-home {
 	margin-right: 0;
 	&:before {

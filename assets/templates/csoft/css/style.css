@@ -1305,6 +1305,51 @@ body._lock {
   opacity: 0;
 }
 
+.icon-32x32 {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+.icon-32x32:before, .icon-32x32:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transition: all 0.3s ease;
+}
+.icon-32x32:after {
+  opacity: 0;
+}
+
+.icon-policy:before {
+  background-image: url(../img/icon-policy.svg);
+}
+.icon-policy:after {
+  background-image: url(../img/icon-policy-color.svg);
+  opacity: 0;
+}
+.icon-policy:hover:before {
+  opacity: 0;
+}
+.icon-policy:hover::after {
+  opacity: 1;
+}
+
+.icon-agreement:before {
+  background-image: url(../img/icon-agreement.svg);
+}
+.icon-agreement:after {
+  background-image: url(../img/icon-agreement-color.svg);
+  opacity: 0;
+}
+.icon-agreement:hover:before {
+  opacity: 0;
+}
+.icon-agreement:hover::after {
+  opacity: 1;
+}
+
 .icon-home {
   margin-right: 0;
 }
