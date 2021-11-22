@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Решение</title>
 
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/main.js" defer></script>
+	<link rel="stylesheet" href="assets/templates/csoft/css/style.css">
+	<script src="assets/templates/csoft/js/main.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 </head>
 
@@ -38,7 +38,7 @@
 
 			<div class="menu__body-wrapper-top">
 
-				<div class="flex-h-center marg-t-2">
+				<div class="flex-h-start marg-t-2">
 					<a href="index.html">
 						<div class="icon-16x16 icon-home"></div>
 					</a>
@@ -64,8 +64,6 @@
 			</div>
 
 			<div class="menu__body-wrapper-center">
-
-
 				<ul class="menu__list">
 
 					<li>
@@ -78,7 +76,8 @@
 								<a href="about.html#product" class="menu__sub-link">Продукты компании</a>
 							</li>
 							<li>
-								<a href="about.html#project" class="menu__sub-link">Проекты CSoft</a>
+								<!-- about.html#project -->
+								<a href="projects.html" class="menu__sub-link">Проекты CSoft</a>
 							</li>
 						</ul>
 					</li>
@@ -112,14 +111,18 @@
 					</li>
 
 				</ul>
-
-
 			</div>
 
 			<div class="menu__body-wrapper-bottom">
-				<cite class="flex-h-center marg-b-1">
-					© CSoft 2021
-				</cite>
+				<div class="flex-h-center marg-b-1">
+					<a href="policy.html" title="Политика конфиденциальности">
+						<div class="icon-32x32 icon-policy"></div>
+					</a>
+					<a href="agreement.html" title="Пользовательское соглашение">
+						<div class="icon-32x32 icon-agreement"></div>
+					</a>
+					<i>© CSoft 2002−2021</i>
+				</div>
 				<div class="flex-h-center marg-b-1">
 					<span class="s-light">Присоединяйтесь к нам</span>
 					<a href="#" class="logo-youtube"></a>
@@ -132,9 +135,9 @@
 
 </nav>
 		<div class="banner-small">
-			<video pip="false" muted loop poster="vid/banner-small.jpg">
-				<source type="video/webm" src="vid/banner-small.webm">
-				<source type="video/mp4" src="vid/banner-small.mp4">
+			<video pip="false" muted loop poster="assets/templates/csoft/vid/banner-small.jpg">
+				<source type="video/webm" src="assets/templates/csoft/vid/banner-small.webm">
+				<source type="video/mp4" src="assets/templates/csoft/vid/banner-small.mp4">
 			</video>
 			<div class="banner-small__content">
 				<div class="banner-small__content-wrapper padding-page content">
@@ -145,9 +148,9 @@
 						<div class="icon-arrow-white"></div>
 						<a href="engineering.html">Машиностроение</a>
 						<div class="icon-arrow-white"></div>
-						<a href="#">Проепкт</a>
+						<a href="#">Решение</a>
 					</nav>
-					<span class="banner-small__headline">Проепкт</span>
+					<span class="banner-small__headline">Решение</span>
 				</div>
 			</div>
 		</div>
@@ -161,7 +164,7 @@
 				<header class="topic-container">
 					<div class="topic">
 						<h1 class="subline">
-							Страница проекта
+							Страница решения
 						</h1>
 						<p class="marg-t-2">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi cumque nemo architecto
@@ -187,8 +190,10 @@
 					<div class="topic-banner">
 						<span class="topic-banner__decorative-border elem-1"></span>
 						<div class="topic-banner__img-wrapper elem-2">
-							<img class="topic-banner__vertical" src="img/600x800-img-10.jpg" alt="">
-							<img class="topic-banner__horizontal" src="img/800x600-img-10.jpg" alt="">
+							<img class="topic-banner__vertical" src="assets/templates/csoft/img/600x800-img-10.jpg"
+								alt="">
+							<img class="topic-banner__horizontal" src="assets/templates/csoft/img/800x600-img-10.jpg"
+								alt="">
 							<span class="topic-banner__img-border"></span>
 						</div>
 					</div>
@@ -222,34 +227,42 @@
 			</article>
 		</main>
 
-<div class="newsletter">
+<div class="feedback">
 
-	<div class="newsletter-wrapper padding-page content">
-
-
-		<h4 id="newsletter-subline-info">Подпишитись на наши новости и специальные предложения</h4>
-
-		<form id="newsletter-form" action="#" class="feedback-form">
+	<div class="feedback-wrapper padding-page content">
 
 
-			<div class="newsletter-form__input-container input-container-half-width">
-				<input id="newsletter__client-name" name="name" class="newsletter-form__input __req __name" type="text"
+		<h4 id="feedback-subline-info">Напишите нам, мы рады помочь</h4>
+
+		<form id="feedback-form" action="#" class="feedback-form">
+
+
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-name" name="name" class="feedback-form__input __req __name" type="text"
 					placeholder=" " />
-				<div class="newsletter-form__cut cut-name-width"></div>
-				<label for="newsletter__client-name" class="newsletter-form__placeholder">Ваше
+				<div class="feedback-form__cut cut-name-width"></div>
+				<label for="feedback__client-name" class="feedback-form__placeholder">Ваше
 					имя</label>
 			</div>
-			<div class="newsletter-form__input-container input-container-half-width">
-				<input id="newsletter__client-email-address" name="email" class="newsletter-form__input __req __email"
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-email-address" name="email" class="feedback-form__input __req __email"
 					type="text" placeholder=" " />
-				<div class="newsletter-form__cut cut-email-width"></div>
-				<label for="newsletter__client-email-address" class="newsletter-form__placeholder">Email</label>
+				<div class="feedback-form__cut cut-email-width"></div>
+				<label for="feedback__client-email-address" class="feedback-form__placeholder">Email</label>
 			</div>
-
+			<div class="feedback-form__input-container">
+				<textarea id="feedback__message" name="message"
+					class="feedback-form__input feedback-form__input-message  __req __message" cols="100500"
+					placeholder=" "></textarea>
+				<div class="feedback-form__cut cut-message-width"></div>
+				<label for="feedback__message" class="feedback-form__placeholder">Сообщение</label>
+			</div>
 			<div class="feedback-form__checkbox-container">
-				<input id="newsletter__checkbox" type="checkbox" checked class="input __req __chackbox">
-				<label for="newsletter__checkbox" class="label s-light">Даю согласие на обработку персональных
-					данных</label>
+				<input id="feedback__checkbox" type="checkbox" checked class="input __req __chackbox">
+				<label for="feedback__checkbox" class="label s-light">
+					<span>Согласен на обработку данных в соответствии с&#160;<a href="policy.html">политикой
+							конфиденциальности</a></span>
+				</label>
 			</div>
 
 
@@ -257,13 +270,13 @@
 
 
 			<button type="submit" class="feedback-form__btn">
-				Подписаться
+				Отправить
 			</button>
 		</form>
 
 	</div>
 </div>
-<footer class="footer">
+<section class="footer">
 	<div class="footer__wrapper padding-page content">
 
 		<div class="footer__top-container">
@@ -295,18 +308,26 @@
 			<a href="https://hh.ru/employer/4303" target="_blank" class="s-light">HeadHunter</a>
 		</div>
 	</div>
-</footer>
+</section>
 
-<div class="footer-bottom-part">
+<footer class="footer-bottom-part">
 	<div class="footer-bottom-part__wrapper padding-page">
-		<i>© CSoft 2021</i>
+		<div class="flex-h-center">
+			<a href="policy.html" title="Политика конфиденциальности">
+				<div class="icon-32x32 icon-policy"></div>
+			</a>
+			<a href="agreement.html" title="Пользовательское соглашение">
+				<div class="icon-32x32 icon-agreement"></div>
+			</a>
+			<i>© CSoft 2002−2021</i>
+		</div>
 		<div class="social-media s-light">
 			Присоединяйтесь к нам
 			<a href="#" target="_blank" class="logo-youtube"></a>
 			<a href="#" target="_blank" class="logo-habr"></a>
 		</div>
 	</div>
-</div>
+</footer>
 	</div>
 
 </body>

@@ -287,6 +287,10 @@ button:hover {
   padding-top: 4rem;
 }
 
+.marg-b-1 {
+  padding-bottom: 1rem;
+}
+
 .j-c-s-b {
   justify-content: space-between;
 }
@@ -833,12 +837,12 @@ body._lock {
   margin-top: -3px;
 }
 .menu__body-home-namvigation li {
+  position: absolute;
   pointer-events: none;
   display: none;
   opacity: 0;
   padding-bottom: 0.3rem;
   transition: all 0.3s ease;
-  position: absolute;
 }
 .menu__body-home-namvigation > li {
   position: relative;
@@ -861,8 +865,7 @@ body._lock {
 
 .menu__list {
   position: relative;
-  display: inline-block;
-  margin-left: 38%;
+  margin-left: 50%;
   padding: 70px 0;
 }
 .menu__list a {
@@ -876,31 +879,41 @@ body._lock {
 }
 .menu__list > li .menu__link {
   transition: all 0.5s ease;
-  margin-left: 1.6rem;
+  margin-left: 2rem;
 }
 .menu__list > li .menu__sub-link {
   transition: all 0.5s ease;
-  margin-left: 2.8rem;
+  margin-right: 2rem;
+  opacity: 0;
 }
 .menu__list > li:hover .menu__link {
   margin-left: 0rem;
 }
+.menu__list > li:hover .menu__sub-list {
+  pointer-events: painted;
+}
 .menu__list > li:hover .menu__sub-link {
-  margin-left: 3rem;
+  opacity: 1;
 }
 .menu__list > li .menu__sub-link:hover {
-  margin-left: 4.4rem;
+  margin-right: 1rem;
 }
 
 .menu__sub-list {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
   font-size: 0.5625em;
   line-height: 2em;
   text-transform: none;
+  text-align: right;
   margin: 0.6rem;
+  pointer-events: none;
 }
 
 @media (max-height: 1000px) {
@@ -921,9 +934,22 @@ body._lock {
   .menu__body {
     height: calc(100vh - 50px);
   }
-
   .menu__list {
-    margin-left: 27%;
+    margin-left: 33%;
+  }
+  .menu__sub-list {
+    cursor: pointer;
+    position: unset;
+    text-align: left;
+  }
+
+  .menu__list > li .menu__link {
+    margin-left: unset;
+  }
+  .menu__list > li .menu__sub-link {
+    opacity: 1;
+    margin-right: unset;
+    margin-left: 0.6rem;
   }
 }
 @media (max-width: 481px) {
@@ -944,9 +970,8 @@ body._lock {
   .menu__body-wrapper-bottom cite {
     margin-bottom: 1.7rem;
   }
-
   .menu__list {
-    margin-left: 4%;
+    margin-left: 10%;
   }
 }
 .rich-banner {
