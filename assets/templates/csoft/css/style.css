@@ -590,10 +590,26 @@ button:hover {
   object-fit: cover;
   transition: all 0.5s ease;
 }
+.topic-small__img-vendor::before {
+  content: "";
+  position: absolute;
+  width: 168px;
+  height: 168px;
+  background-image: url(../img/vendor-mask.svg);
+  pointer-events: none;
+}
 
 .tags {
   display: flex;
   flex-wrap: wrap;
+}
+.tags a {
+  text-decoration: unset;
+  transition: unset;
+  display: inline-block;
+}
+.tags a:hover {
+  color: unset;
 }
 .tags li {
   transition: all 0.3s ease;
@@ -1918,8 +1934,17 @@ body._lock {
 }
 
 .swiper-vendor .swiper-slide {
+  position: relative;
   text-align: center;
   margin-bottom: 3rem;
+}
+.swiper-vendor .swiper-slide::before {
+  content: "";
+  position: absolute;
+  width: 168px;
+  height: 168px;
+  background-image: url(../img/vendor-mask.svg);
+  pointer-events: none;
 }
 
 @media (max-width: 1300px) {
@@ -2050,6 +2075,9 @@ body._lock {
   }
 
   .topic-small__img-wrapper {
+    display: none;
+  }
+  .topic-small__img-vendor {
     display: none;
   }
 

@@ -61,8 +61,17 @@
 }
 .swiper-vendor {
 	.swiper-slide {
+		position: relative;
 		text-align: center;
 		margin-bottom: 3rem;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 168px;
+			height: 168px;
+			background-image: url(../img/vendor-mask.svg);
+			pointer-events: none;
+		}
 	}
 }
 
