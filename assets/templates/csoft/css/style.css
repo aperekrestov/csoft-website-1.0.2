@@ -741,25 +741,18 @@ body._lock {
   transform: scaleY(-1);
 }
 
-#vendor:before {
-  display: block;
-  content: "";
-  height: 32px;
-  margin: -32px 0 0;
-}
-
-#product:before {
+#products:before {
   display: block;
   content: "";
   height: 80px;
   margin: -80px 0 0;
 }
 
-#project:before {
+#offices:before {
   display: block;
   content: "";
-  height: 80px;
-  margin: -80px 0 0;
+  height: 70px;
+  margin: -70px 0 0;
 }
 
 .menu {
