@@ -27,12 +27,12 @@ if (document.querySelector('.map__ineractive-container')) {
 		calculation()
 
 		targets.forEach(target => {
-			target.addEventListener('click', e => {
+			target.addEventListener('mouseover', e => {
 				let delay = 0
 				targets.forEach(target => {
-					delay += 0.025
+					delay += 0.01
 					if (target.id !== e.target.id) {
-						gsap.to(target, 0.25, { opacity: 0.15, delay: delay })
+						gsap.to(target, 0.5, { opacity: 0.15, delay: delay, ease: Power0.easeNone })
 					}
 				})
 				gsap.set(officeInfo, { y: 20, opacity: 0 })
@@ -42,7 +42,25 @@ if (document.querySelector('.map__ineractive-container')) {
 				officeInfo.querySelector('a').innerHTML = target.getAttribute('data-city')
 				officeInfo.querySelector('a').setAttribute('href', target.getAttribute('data-link') + target.getAttribute('data-city'))
 				officeInfo.style.left = 'calc(' + target.style.left + ' - ' + officeInfo.clientWidth / 2 + 'px' + ' + 10px)'
-				officeInfo.style.top = 'calc(' + target.style.top + ' + 16px)'
+				officeInfo.style.top = 'calc(' + target.style.top + ' + 12px)'
+			})
+
+			target.addEventListener('click', e => {
+				let delay = 0
+				targets.forEach(target => {
+					delay += 0.01
+					if (target.id !== e.target.id) {
+						gsap.to(target, 0.5, { opacity: 0.15, delay: delay, ease: Power0.easeNone })
+					}
+				})
+				gsap.set(officeInfo, { y: 20, opacity: 0 })
+				gsap.to(officeInfo, 1, { opacity: 1, y: 0, ease: Power1.easeOut })
+				gsap.to(target, 0.25, { opacity: 1 })
+				officeInfo.style.display = 'block'
+				officeInfo.querySelector('a').innerHTML = target.getAttribute('data-city')
+				officeInfo.querySelector('a').setAttribute('href', target.getAttribute('data-link') + target.getAttribute('data-city'))
+				officeInfo.style.left = 'calc(' + target.style.left + ' - ' + officeInfo.clientWidth / 2 + 'px' + ' + 10px)'
+				officeInfo.style.top = 'calc(' + target.style.top + ' + 12px)'
 			})
 		})
 
