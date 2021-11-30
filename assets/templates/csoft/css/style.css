@@ -549,7 +549,6 @@ button:hover {
 
 .topic-small {
   display: flex;
-  align-items: center;
 }
 .topic-small:hover .topic-small__img-wrapper .topic-small__img-border {
   transform: translateX(-5px) translateY(-5px);

@@ -435,7 +435,7 @@ button {
 
 .topic-small {
 	display: flex;
-	align-items: center;
+	// align-items: center;
 	&:hover {
 		.topic-small__img-wrapper .topic-small__img-border {
 			transform: translateX(-5px) translateY(-5px);
