@@ -108,6 +108,10 @@ body ::selection {
   background-color: #e6eaea;
 }
 
+.txt-decor-unset {
+  text-decoration: unset;
+}
+
 a {
   font-weight: 500;
   text-decoration: underline;
@@ -1422,6 +1426,13 @@ body._lock {
   height: 16px;
   margin: 0 0.5rem 0 0;
   background-image: url(../img/icon-location.svg);
+}
+
+.icon-news-type {
+  width: 16px;
+  height: 16px;
+  margin: 0 0.5rem 0 0;
+  background-image: url(../img/icon-news-type.svg);
 }
 
 .icon-office {

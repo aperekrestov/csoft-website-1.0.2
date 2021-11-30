@@ -26,11 +26,16 @@ body {
 		background-color: $color_5;
 	}
 }
+
+.txt-decor-unset {
+	text-decoration: unset;
+}
 a {
 	font-weight: 500;
 	text-decoration: underline;
 	transition: all 0.3s ease;
 	display: inline-block;
+
 	&:hover {
 		color: $color_2;
 		.icon-youtube,
