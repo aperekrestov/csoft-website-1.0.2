@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		BANNER_SMALL.querySelector('video').play()
 
 		if (window.innerWidth >= 481) {
-			BANNER_SMALL.querySelector('.banner-small__content-wrapper').appendChild(cloneH1)
+			BANNER_SMALL.querySelector('.banner-small__headline-container').appendChild(cloneH1)
 			gsap.set(cloneH1, {
 				transformOrigin: "0 0",
-				scale: 2,
-				y: -125,
+				scale: 1.4,
+				y: 4,
 				x: -20,
 				opacity: 0,
 				pointerEvents: "none"
 			})
-			gsap.to(cloneH1, 3, { x: 5, opacity: 0.3, ease: Power1.easeInOut })
+			gsap.to(cloneH1, 3, { x: 5, opacity: 0.14, ease: Power1.easeInOut })
 		}
 
 		gsap.set(BANNER_SMALL_NAVI, { y: -10, opacity: 0 })
