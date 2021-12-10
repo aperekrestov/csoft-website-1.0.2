@@ -122,6 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 
+	//? календарь мероприятий
+	if (document.querySelector('.calendar') && document.querySelector('.calendar-expand')) {
+		const CALENDAR = document.querySelector('.calendar')
+		const CALENDAR_EXPAND = document.querySelector('.calendar-expand')
+		CALENDAR_EXPAND.addEventListener('click', e => {
+			CALENDAR_EXPAND.classList.toggle('_show-calendar')
+			CALENDAR.classList.toggle('_show-calendar')
+		})
+	}
+
+
 	//? тэги
 	if (document.querySelector('.tags')) {
 		let tagLists = document.querySelectorAll('.tags')

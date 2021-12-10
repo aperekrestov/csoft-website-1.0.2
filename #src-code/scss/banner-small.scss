@@ -24,7 +24,7 @@
 		flex-wrap: wrap;
 		a {
 			margin-bottom: 0.5rem;
-			max-width: 320px;
+			max-width: 240px;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -65,7 +65,7 @@
 	.banner-small {
 		&__navigation {
 			a {
-				max-width: 260px;
+				max-width: 220px;
 			}
 		}
 		&__headline {
