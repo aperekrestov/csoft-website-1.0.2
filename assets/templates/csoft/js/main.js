@@ -175,6 +175,10 @@ document.addEventListener('DOMContentLoaded', function () {
 					calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + currentDayEvents[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + currentDayEvents[i][0] + '</h3><p class="marg-t-2">' + currentDayEvents[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
 				}
 				calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+				for (let d = 0; d < eventDays.length; d++) {
+					eventDays[d].classList.remove('event-day-clicked')
+				}
+				e.target.classList.add('event-day-clicked')
 			})
 		})
 	}

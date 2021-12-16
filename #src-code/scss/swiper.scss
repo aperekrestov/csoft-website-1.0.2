@@ -90,10 +90,13 @@
 	}
 	.swiper-button-prev,
 	.swiper-button-next {
-		display: none;
+		top: calc(50% + 7px);
 	}
-	.swiper-pagination-bullet {
-		background-color: $color_6;
+	.swiper-button-prev {
+		left: 0;
+	}
+	.swiper-button-next {
+		right: 0;
 	}
 	&__picture {
 		position: absolute;
@@ -172,6 +175,12 @@
 				width: 100%;
 				height: auto;
 			}
+		}
+	}
+	.swiper-calendar {
+		.swiper-button-prev,
+		.swiper-button-next {
+			display: none;
 		}
 	}
 }

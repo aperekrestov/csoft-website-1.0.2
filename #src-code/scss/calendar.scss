@@ -113,7 +113,6 @@
 		display: flex;
 		flex-grow: 1;
 		flex-wrap: wrap-reverse;
-		// align-items: flex-end;
 		justify-content: flex-end;
 		pointer-events: none;
 	}
@@ -122,8 +121,6 @@
 	}
 	.event-day {
 		font-weight: 500;
-		// color: $color_7;
-		// border: 0.5px solid $color_9;
 		background-color: $color_4;
 		cursor: pointer;
 		transition: 0.3s ease;
@@ -141,11 +138,23 @@
 			}
 		}
 	}
+	.event-day-clicked {
+		color: $color_8;
+		background-color: $color_2;
+		border: 0.5px solid $color_8;
+		.icon-10x10 {
+			&:before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
 	&__view {
 		position: relative;
 		width: 50%;
 		height: 100%;
-		// background-color: $color_1;
 		h3,
 		p,
 		a {
@@ -155,7 +164,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			padding: 1rem;
+			padding: 1rem 2rem;
 		}
 	}
 }
@@ -200,7 +209,7 @@
 		}
 		&__view {
 			.swiper-calendar__content {
-				padding: 1.5rem 0.3rem;
+				padding: 1.5rem 0.2rem;
 			}
 		}
 	}
