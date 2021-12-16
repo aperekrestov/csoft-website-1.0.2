@@ -14,6 +14,7 @@
 			transition: all 0.3s ease;
 			color: $color_6;
 			font-size: 16px;
+			// font-weight: 700;
 		}
 		&:hover {
 			&:after {
@@ -31,10 +32,11 @@
 	}
 	.swiper-pagination-fraction {
 		font-size: 12px; //? 0.875rem
-		font-weight: 400;
+		font-weight: 700;
 		color: $color_7;
 	}
 }
+
 .swiper-solution {
 	.swiper-slide {
 		display: flex;
@@ -59,6 +61,7 @@
 		padding-left: 3rem;
 	}
 }
+
 .swiper-vendor {
 	.swiper-slide {
 		position: relative;
@@ -71,6 +74,44 @@
 			height: 168px;
 			background-image: url(../img/vendor-mask.svg);
 			pointer-events: none;
+		}
+	}
+}
+
+.swiper-calendar {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	.swiper-slide {
+		display: flex;
+		align-items: center;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+	}
+	.swiper-pagination-bullet {
+		background-color: $color_6;
+	}
+	&__picture {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: rgba($color: $color_1, $alpha: 0.75);
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			position: absolute;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

@@ -122,17 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 
-	//? календарь мероприятий
-	if (document.querySelector('.calendar') && document.querySelector('.calendar-expand')) {
-		const CALENDAR = document.querySelector('.calendar')
-		const CALENDAR_EXPAND = document.querySelector('.calendar-expand')
-		CALENDAR_EXPAND.addEventListener('click', e => {
-			CALENDAR_EXPAND.classList.toggle('_show-calendar')
-			CALENDAR.classList.toggle('_show-calendar')
-		})
-	}
-
-
 	//? тэги
 	if (document.querySelector('.tags')) {
 		let tagLists = document.querySelectorAll('.tags')
@@ -142,6 +131,50 @@ document.addEventListener('DOMContentLoaded', function () {
 				tagItem.addEventListener('click', e => {
 					tagItem.classList.toggle('__active')
 				})
+			})
+		})
+	}
+
+
+
+
+	//? календарь мероприятий
+	if (document.querySelector('.calendar') && document.querySelector('.event-day') && document.getElementById('calendar_swiper_wrapper')) {
+		let eventDays = document.querySelectorAll('.event-day')
+		let firstEvent = JSON.parse(eventDays[0].getAttribute("data-src"))
+		let calendarSwiperWrapper = document.getElementById("calendar_swiper_wrapper")
+		let calendarSwiperSettings = {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+			},
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: true
+			},
+			speed: 500
+		}
+
+		calendarSwiperWrapper.innerHTML = ""
+		for (let i = 0; i < firstEvent.length; i++) {
+			calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + firstEvent[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + firstEvent[i][0] + '</h3><p class="marg-t-2">' + firstEvent[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+		}
+		let calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+
+		eventDays.forEach(eventDay => {
+			eventDay.addEventListener('click', e => {
+				calendarSwiper.destroy()
+				calendarSwiperWrapper.removeAttribute('style')
+				calendarSwiperWrapper.innerHTML = ""
+				let currentDayEvents = JSON.parse(e.target.getAttribute("data-src"))
+				for (let i = 0; i < currentDayEvents.length; i++) {
+					calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + currentDayEvents[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + currentDayEvents[i][0] + '</h3><p class="marg-t-2">' + currentDayEvents[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+				}
+				calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
 			})
 		})
 	}

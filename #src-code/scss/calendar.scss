@@ -1,0 +1,207 @@
+.calendar {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 380px;
+
+	&__container-days {
+		width: 50%;
+		height: 100%;
+		padding: 1rem;
+		background-color: $color_1;
+		display: flex;
+		flex-direction: column;
+	}
+	&__date {
+		position: relative;
+		margin: 0 0 1rem 0.5rem;
+	}
+	&__date-nav-prev {
+		position: relative;
+		cursor: pointer;
+		width: 14px;
+		height: 26px;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 14px;
+			height: 26px;
+			transition: all 0.3s ease;
+			background-repeat: no-repeat;
+			background-position: 0% 50%;
+		}
+		&::before {
+			background-image: url(../img/icon-left.svg);
+		}
+		&::after {
+			background-image: url(../img/icon-left-color.svg);
+			opacity: 0;
+		}
+		&:hover {
+			&::before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	&__date-nav-next {
+		position: relative;
+		cursor: pointer;
+		width: 14px;
+		height: 26px;
+		margin-right: 1rem;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 14px;
+			height: 26px;
+			transition: all 0.3s ease;
+			background-repeat: no-repeat;
+			background-position: 100% 50%;
+		}
+		&::before {
+			background-image: url(../img/icon-right.svg);
+		}
+		&::after {
+			background-image: url(../img/icon-right-color.svg);
+			opacity: 0;
+		}
+		&:hover {
+			&::before {
+				opacity: 0;
+			}
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__days-week {
+		display: flex;
+		width: 100%;
+		margin-bottom: 0.7rem;
+	}
+	&__days-week-item {
+		width: calc(100% / 7);
+		height: 100%;
+		margin-left: 0.5rem;
+	}
+
+	&__days-month {
+		width: 100%;
+		flex-grow: 1;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__day-of-month {
+		display: flex;
+		flex-direction: column;
+		width: calc(100% / 7);
+		height: calc(100% / 5);
+		border: 0.5px solid $color_5;
+		padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+		color: $color_9;
+		span {
+			pointer-events: none;
+		}
+	}
+	&__icons-container {
+		display: flex;
+		flex-grow: 1;
+		flex-wrap: wrap-reverse;
+		// align-items: flex-end;
+		justify-content: flex-end;
+		pointer-events: none;
+	}
+	.valid-day {
+		color: $color_6;
+	}
+	.event-day {
+		font-weight: 500;
+		// color: $color_7;
+		// border: 0.5px solid $color_9;
+		background-color: $color_4;
+		cursor: pointer;
+		transition: 0.3s ease;
+		&:hover {
+			color: $color_8;
+			background-color: $color_2;
+			border: 0.5px solid $color_8;
+			.icon-10x10 {
+				&:before {
+					opacity: 0;
+				}
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__view {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		// background-color: $color_1;
+		h3,
+		p,
+		a {
+			text-shadow: 0px 0px 3px $color_8;
+		}
+		.swiper-calendar__content {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 1rem;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	// ? когда монитор меньше 1025px
+}
+
+@media (max-width: 769px) {
+	// ? когда монитор меньше 769px
+	.calendar {
+		height: 700px;
+		// flex-direction: column-reverse;
+		flex-direction: column;
+
+		&__date {
+			margin: 1.5rem 0 1rem 0.5rem;
+		}
+		&__container-days {
+			width: 100%;
+			padding: 0;
+		}
+		&__view {
+			width: 100%;
+			.swiper-calendar__content {
+				padding: 1.5rem 0.5rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 481px) {
+	.calendar {
+		&__date {
+			margin: 1.5rem 0 1rem 0.3rem;
+		}
+		&__days-week-item {
+			margin-left: 0.3rem;
+		}
+		&__day-of-month {
+			padding: 0.3rem 0 0.3rem 0.3rem;
+		}
+		&__view {
+			.swiper-calendar__content {
+				padding: 1.5rem 0.3rem;
+			}
+		}
+	}
+}

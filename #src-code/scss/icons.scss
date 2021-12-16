@@ -89,6 +89,56 @@
 	}
 }
 
+.icon-10x10 {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	margin-right: 0.3rem;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		transition: all 0.3s ease;
+	}
+	&:after {
+		opacity: 0;
+	}
+}
+.icon-webinar {
+	&:before {
+		background-image: url(../img/icon-webinar.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-webinar-color.svg);
+	}
+}
+.icon-training {
+	&:before {
+		background-image: url(../img/icon-training.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-training-color.svg);
+	}
+}
+.icon-conference {
+	&:before {
+		background-image: url(../img/icon-conference.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-conference-color.svg);
+	}
+}
+.icon-exhibition {
+	&:before {
+		background-image: url(../img/icon-exhibition.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-exhibition-color.svg);
+	}
+}
+
 .icon-location {
 	width: 16px;
 	height: 16px;

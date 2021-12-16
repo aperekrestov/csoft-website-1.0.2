@@ -265,39 +265,6 @@ button {
 	}
 }
 
-.calendar {
-	width: 100%;
-	height: 600px;
-	display: none;
-}
-.calendar._show-calendar {
-	display: block;
-}
-.calendar-expand {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 14px;
-	background-color: $color_1;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	&:hover {
-		background-color: $color_8;
-		.icon-polygon-grey::before {
-			opacity: 0;
-		}
-		.icon-polygon-grey::after {
-			opacity: 1;
-		}
-	}
-}
-.calendar-expand._show-calendar {
-	.icon-polygon-grey {
-		transform: scaleY(-1);
-	}
-}
-
 .projects-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -659,6 +626,7 @@ button {
 @import "icons.scss";
 @import "map.scss";
 @import "feedback.scss";
+@import "calendar.scss";
 @import "swiper.scss";
 
 // @media (min-width: 1919px) {
