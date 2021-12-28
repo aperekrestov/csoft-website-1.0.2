@@ -69,8 +69,14 @@ ol {
 	line-height: 1.8rem;
 	font-weight: 100;
 	padding-left: 1.3rem;
-	list-style-type: disc;
+	// list-style-type: disc;
+	list-style-type: decimal;
+	ol li {
+		list-style-type: lower-latin;
+		// list-style-type: square;
+	}
 }
+
 .subline {
 	word-wrap: break-word;
 	display: flex;
@@ -112,7 +118,6 @@ h4 {
 .p-bold {
 	font-weight: 700;
 }
-
 .s-bold {
 	font-size: 14px; //? 0.875rem
 	font-weight: 500;
@@ -150,6 +155,91 @@ button {
 	padding: 0 3em;
 }
 
+.accordeon {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	// color: $color_7;
+	background-color: $color_1;
+	cursor: pointer;
+	padding: 1rem 1rem;
+	width: 100%;
+	transition: 0.3s;
+	.icon-polygon-grey {
+		margin-left: 1rem;
+	}
+	&:hover {
+		color: $color_2;
+		background-color: $color_8;
+		.icon-polygon-grey {
+			&:before {
+				opacity: 0;
+			}
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}
+.accordeon-active {
+	color: $color_1;
+	background-color: $color_6;
+	.icon-polygon-grey {
+		transform: rotate(60deg);
+		&:before {
+			opacity: 1;
+		}
+		&:after {
+			opacity: 0;
+		}
+	}
+}
+.accordeon.accordeon-active {
+	&:hover {
+		color: $color_9;
+		background-color: $color_6;
+		.icon-polygon-grey {
+			&:before {
+				opacity: 0.7;
+			}
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+}
+.accordeon-panel {
+	background-color: $color_1;
+	padding: 1rem 1rem;
+	overflow: hidden;
+	display: none;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	// как в параграфе
+	font-size: 1rem;
+	line-height: 1.8rem;
+	font-weight: 100;
+}
+table th,
+table td {
+	padding: 1rem;
+}
+table,
+th,
+td {
+	border: 1px solid $color_9;
+}
+table th {
+	background-color: $color_5;
+	color: $color_6;
+	vertical-align: middle;
+	text-align: left;
+	padding: 1rem;
+}
+
 .absolute {
 	position: absolute;
 }
@@ -185,7 +275,6 @@ button {
 .marg-b-1 {
 	padding-bottom: 1rem;
 }
-
 .j-c-s-b {
 	justify-content: space-between;
 }
@@ -213,6 +302,9 @@ button {
 	display: flex;
 	flex-wrap: wrap;
 }
+.width-golden-ratio {
+	width: 77%;
+}
 
 .page {
 	position: relative;
@@ -233,6 +325,10 @@ button {
 	min-width: 0;
 	max-width: 1200px;
 	margin: 0 auto;
+	&__image {
+		width: 100%;
+		height: auto;
+	}
 }
 .section-highlight {
 	position: relative;

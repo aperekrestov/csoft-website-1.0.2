@@ -161,7 +161,10 @@ ol {
   line-height: 1.8rem;
   font-weight: 100;
   padding-left: 1.3rem;
-  list-style-type: disc;
+  list-style-type: decimal;
+}
+ol ol li {
+  list-style-type: lower-latin;
 }
 
 .subline {
@@ -250,6 +253,89 @@ button:hover {
   padding: 0 3em;
 }
 
+.accordeon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcfcfc;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  width: 100%;
+  transition: 0.3s;
+}
+.accordeon .icon-polygon-grey {
+  margin-left: 1rem;
+}
+.accordeon:hover {
+  color: #ed1c24;
+  background-color: #ffffff;
+}
+.accordeon:hover .icon-polygon-grey:before {
+  opacity: 0;
+}
+.accordeon:hover .icon-polygon-grey:after {
+  opacity: 1;
+}
+
+.accordeon-active {
+  color: #fcfcfc;
+  background-color: #202121;
+}
+.accordeon-active .icon-polygon-grey {
+  transform: rotate(60deg);
+}
+.accordeon-active .icon-polygon-grey:before {
+  opacity: 1;
+}
+.accordeon-active .icon-polygon-grey:after {
+  opacity: 0;
+}
+
+.accordeon.accordeon-active:hover {
+  color: #c3c7c6;
+  background-color: #202121;
+}
+.accordeon.accordeon-active:hover .icon-polygon-grey:before {
+  opacity: 0.7;
+}
+.accordeon.accordeon-active:hover .icon-polygon-grey:after {
+  opacity: 0;
+}
+
+.accordeon-panel {
+  background-color: #fcfcfc;
+  padding: 1rem 1rem;
+  overflow: hidden;
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  font-weight: 100;
+}
+
+table th,
+table td {
+  padding: 1rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid #c3c7c6;
+}
+
+table th {
+  background-color: #e6eaea;
+  color: #202121;
+  vertical-align: middle;
+  text-align: left;
+  padding: 1rem;
+}
+
 .absolute {
   position: absolute;
 }
@@ -330,6 +416,10 @@ button:hover {
   flex-wrap: wrap;
 }
 
+.width-golden-ratio {
+  width: 77%;
+}
+
 .page {
   position: relative;
   background-color: #f4f7f6;
@@ -350,6 +440,10 @@ button:hover {
   min-width: 0;
   max-width: 1200px;
   margin: 0 auto;
+}
+.content__image {
+  width: 100%;
+  height: auto;
 }
 
 .section-highlight {

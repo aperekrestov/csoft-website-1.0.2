@@ -249,6 +249,22 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
+	//? аккордеон
+	var acc = document.getElementsByClassName("accordeon");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function () {
+			this.classList.toggle("accordeon-active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "block";
+			}
+		});
+	}
+
 
 	// //? интерактив/прилипание объектов к курсору
 	// if (document.querySelector('.topic-banner')) {
