@@ -278,8 +278,8 @@ button:hover {
 }
 
 .accordeon-active {
-  color: #fcfcfc;
-  background-color: #202121;
+  color: #202121;
+  background-color: #ffffff;
 }
 .accordeon-active .icon-polygon-grey {
   transform: rotate(60deg);
@@ -292,14 +292,13 @@ button:hover {
 }
 
 .accordeon.accordeon-active:hover {
-  color: #c3c7c6;
-  background-color: #202121;
+  color: #818285;
 }
 .accordeon.accordeon-active:hover .icon-polygon-grey:before {
-  opacity: 0.7;
+  opacity: 0;
 }
 .accordeon.accordeon-active:hover .icon-polygon-grey:after {
-  opacity: 0;
+  opacity: 1;
 }
 
 .accordeon-panel {
@@ -2448,7 +2447,7 @@ body._lock {
     flex-direction: column;
   }
   .topic-container .topic-banner {
-    display: block;
+    display: none;
     width: 100%;
     height: unset;
   }
