@@ -16,6 +16,59 @@
 	}
 }
 
+.icon-32x32 {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	margin-right: 0.5rem;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		transition: all 0.3s ease;
+	}
+	&:after {
+		opacity: 0;
+	}
+}
+
+.icon-policy {
+	&:before {
+		background-image: url(../img/icon-policy.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-policy-color.svg);
+		opacity: 0;
+	}
+	&:hover {
+		&:before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+.icon-agreement {
+	&:before {
+		background-image: url(../img/icon-agreement.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-agreement-color.svg);
+		opacity: 0;
+	}
+	&:hover {
+		&:before {
+			opacity: 0;
+		}
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
 .icon-home {
 	margin-right: 0;
 	&:before {
@@ -36,11 +89,67 @@
 	}
 }
 
+.icon-10x10 {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	margin-right: 0.3rem;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		transition: all 0.3s ease;
+	}
+	&:after {
+		opacity: 0;
+	}
+}
+.icon-webinar {
+	&:before {
+		background-image: url(../img/icon-webinar.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-webinar-color.svg);
+	}
+}
+.icon-training {
+	&:before {
+		background-image: url(../img/icon-training.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-training-color.svg);
+	}
+}
+.icon-conference {
+	&:before {
+		background-image: url(../img/icon-conference.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-conference-color.svg);
+	}
+}
+.icon-exhibition {
+	&:before {
+		background-image: url(../img/icon-exhibition.svg);
+	}
+	&:after {
+		background-image: url(../img/icon-exhibition-color.svg);
+	}
+}
+
 .icon-location {
 	width: 16px;
 	height: 16px;
 	margin: 0 0.5rem 0 0;
 	background-image: url(../img/icon-location.svg);
+}
+.icon-news-type {
+	width: 16px;
+	height: 16px;
+	margin: 0 0.5rem 0 0;
+	background-image: url(../img/icon-news-type.svg);
 }
 .icon-office {
 	width: 16px;
@@ -56,7 +165,7 @@
 }
 
 .icon-phone {
-	//todo не работает HOVER
+	//? не задан HOVER в стиле ссылки
 	&:before {
 		background-image: url(../img/icon-phone.svg);
 	}

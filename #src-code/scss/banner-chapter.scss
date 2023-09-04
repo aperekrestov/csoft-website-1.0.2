@@ -6,12 +6,6 @@
 	color: $color_8;
 	overflow: hidden;
 	word-wrap: break-word;
-	// h1 {
-	// 	text-transform: uppercase;
-	// 	margin-top: 60px;
-	// 	// min-width: 481px;
-	// 	word-wrap: break-word;
-	// }
 
 	video {
 		position: absolute;
@@ -25,7 +19,7 @@
 		flex-direction: column;
 		font-size: 3rem; //48px
 		font-weight: 700;
-		max-width: 600px;
+		// max-width: 600px;
 		text-transform: uppercase;
 		margin-top: 60px;
 		word-wrap: break-word;
@@ -63,9 +57,10 @@
 }
 
 .infographic-item {
+	// background-color: $color_2;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	// align-items: center;
 	justify-content: center;
 	min-width: 170px;
 	height: 120px;
@@ -80,6 +75,9 @@
 	&__value {
 		margin-bottom: 5px;
 	}
+	&__subline {
+		margin-left: 2rem;
+	}
 }
 
 @media (max-width: 769px) {
@@ -87,7 +85,6 @@
 	.banner-chapter {
 		&__info-cont {
 			width: 400px;
-			padding-left: 2rem;
 		}
 	}
 	.infographic-item {
@@ -99,7 +96,6 @@
 	.banner-chapter {
 		&__info-cont {
 			margin-top: 4rem;
-			padding-left: 1rem;
 			width: 300px;
 		}
 	}

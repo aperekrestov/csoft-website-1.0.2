@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		BANNER_SMALL.querySelector('video').play()
 
 		if (window.innerWidth >= 481) {
-			BANNER_SMALL.querySelector('.banner-small__content-wrapper').appendChild(cloneH1)
+			BANNER_SMALL.querySelector('.banner-small__headline-container').appendChild(cloneH1)
 			gsap.set(cloneH1, {
 				transformOrigin: "0 0",
-				scale: 2,
-				y: -125,
+				scale: 1.4,
+				y: 4,
 				x: -20,
 				opacity: 0,
 				pointerEvents: "none"
 			})
-			gsap.to(cloneH1, 3, { x: 5, opacity: 0.3, ease: Power1.easeInOut })
+			gsap.to(cloneH1, 3, { x: 5, opacity: 0.14, ease: Power1.easeInOut })
 		}
 
 		gsap.set(BANNER_SMALL_NAVI, { y: -10, opacity: 0 })
@@ -131,6 +131,54 @@ document.addEventListener('DOMContentLoaded', function () {
 				tagItem.addEventListener('click', e => {
 					tagItem.classList.toggle('__active')
 				})
+			})
+		})
+	}
+
+
+
+
+	//? календарь мероприятий
+	if (document.querySelector('.calendar') && document.querySelector('.event-day') && document.getElementById('calendar_swiper_wrapper')) {
+		let eventDays = document.querySelectorAll('.event-day')
+		let firstEvent = JSON.parse(eventDays[0].getAttribute("data-src"))
+		let calendarSwiperWrapper = document.getElementById("calendar_swiper_wrapper")
+		let calendarSwiperSettings = {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+			},
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: true
+			},
+			speed: 500
+		}
+
+		calendarSwiperWrapper.innerHTML = ""
+		for (let i = 0; i < firstEvent.length; i++) {
+			calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + firstEvent[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + firstEvent[i][0] + '</h3><p class="marg-t-2">' + firstEvent[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+		}
+		let calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+
+		eventDays.forEach(eventDay => {
+			eventDay.addEventListener('click', e => {
+				calendarSwiper.destroy()
+				calendarSwiperWrapper.removeAttribute('style')
+				calendarSwiperWrapper.innerHTML = ""
+				let currentDayEvents = JSON.parse(e.target.getAttribute("data-src"))
+				for (let i = 0; i < currentDayEvents.length; i++) {
+					calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + currentDayEvents[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + currentDayEvents[i][0] + '</h3><p class="marg-t-2">' + currentDayEvents[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+				}
+				calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+				for (let d = 0; d < eventDays.length; d++) {
+					eventDays[d].classList.remove('event-day-clicked')
+				}
+				e.target.classList.add('event-day-clicked')
 			})
 		})
 	}
@@ -198,6 +246,20 @@ document.addEventListener('DOMContentLoaded', function () {
 			speed: 500,
 			loop: 'true'
 
+		})
+	}
+
+	//? аккордеон
+	let accordeon = document.getElementsByClassName("accordeon")
+	for (let i = 0; i < accordeon.length; i++) {
+		accordeon[i].addEventListener("click", function () {
+			this.classList.toggle("accordeon-active")
+			let panel = this.nextElementSibling
+			if (panel.style.display === "block") {
+				panel.style.display = "none"
+			} else {
+				panel.style.display = "block"
+			}
 		})
 	}
 

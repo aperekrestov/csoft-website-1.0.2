@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Вендор</title>
+
+	<link rel="stylesheet" href="assets/templates/csoft/css/style.css">
+	<script src="assets/templates/csoft/js/main.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+<nav class="menu">
+
+	<div class="menu__top-bar">
+		<a href="index.html" class="menu__logo"></a>
+		<div class="menu__btn">
+			<p>
+				меню
+			</p>
+			<div class="menu__btn-icon-wrapper">
+				<span class='menu__btn-top-line'></span>
+				<span class='menu__btn-middle-line'></span>
+				<span class='menu__btn-bottom-line'></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="menu__body">
+		<div class="menu__body-bg-wrapper">
+			<div class="menu__body-bg"></div>
+		</div>
+		<div class="menu__body-wrapper padding-page">
+
+			<div class="menu__body-wrapper-top">
+
+				<div class="flex-h-start marg-t-2">
+					<a href="index.html">
+						<div class="icon-16x16 icon-home"></div>
+					</a>
+					<div class="icon-arrow"></div>
+
+					<ul class="menu__body-home-namvigation">
+						<li>
+							<a href="engineering.html">Машиностроение</a>
+							<div id="menu__body-home-namvigation-poligon" class="icon-polygon"></div>
+						</li>
+						<ul>
+							<li>
+								<a href="#">Строительство</a>
+							</li>
+						</ul>
+					</ul>
+				</div>
+
+				<div class="flex-h-center marg-t-2 s-bold">
+					<div class="icon-16x16 icon-phone"></div>
+					+7 (495) 913-22-22
+				</div>
+			</div>
+
+			<div class="menu__body-wrapper-center">
+				<ul class="menu__list">
+
+					<li>
+						<a href="about.html" class="menu__link">о компании</a>
+						<ul class="menu__sub-list">
+							<li>
+								<a href="vendors.html" class="anchor-hash-content menu__sub-link">Наши вендоры</a>
+							</li>
+							<li>
+								<a href="about.html#products" class="menu__sub-link">Продукты компании</a>
+							</li>
+							<li>
+								<a href="projects.html" class="menu__sub-link">Проекты CSoft</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="solutions.html" class="menu__link">решения</a>
+					</li>
+
+					<li>
+						<a href="price.html" class="menu__link">цены</a>
+					</li>
+
+					<li>
+						<a href="news.html" class="menu__link">новости</a>
+					</li>
+
+					<li>
+						<a href="events.html" class="menu__link">события</a>
+					</li>
+
+					<li>
+						<a href="contacts.html" class="menu__link">контакты</a>
+						<ul class="menu__sub-list">
+							<li>
+								<a href="contacts.html#offices" class="menu__sub-link">Отделения CSoft</a>
+							</li>
+							<li>
+								<a href="contacts.html#feedback" class="menu__sub-link">Обратная связь</a>
+							</li>
+							<li>
+								<a href="https://hh.ru/employer/4303" target="_blank" class="menu__sub-link">Вакансии
+									CSoft</a>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="menu__body-wrapper-bottom">
+				<div class="flex-h-center marg-b-1">
+					<a href="policy.html" title="Политика конфиденциальности">
+						<div class="icon-32x32 icon-policy"></div>
+					</a>
+					<a href="agreement.html" title="Пользовательское соглашение">
+						<div class="icon-32x32 icon-agreement"></div>
+					</a>
+					<i>© CSoft 2002−2021</i>
+				</div>
+				<div class="flex-h-center marg-b-1">
+					<span class="s-light">Присоединяйтесь к нам</span>
+					<a href="#" class="logo-youtube"></a>
+					<a href="#" class="logo-habr"></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</nav>
+		<div class="banner-small">
+			<video pip="false" muted loop poster="assets/templates/csoft/vid/banner-small.jpg">
+				<source type="video/webm" src="assets/templates/csoft/vid/banner-small.webm">
+				<source type="video/mp4" src="assets/templates/csoft/vid/banner-small.mp4">
+			</video>
+			<div class="banner-small__content">
+				<div class="banner-small__content-wrapper padding-page content">
+					<nav id="banner-small__navigation" class="banner-small__navigation marg-t-1">
+						<a href="index.html">
+							<div class="icon-16x16 icon-home-white"></div>
+						</a>
+						<div class="icon-arrow-white"></div>
+						<a href="engineering.html">Машиностроение</a>
+						<div class="icon-arrow-white"></div>
+						<a href="vendors.html">Вендоры</a>
+						<div class="icon-arrow-white"></div>
+						<a href="#">Вендор</a>
+					</nav>
+
+					<div class="banner-small__headline-container">
+						<span class="banner-small__headline">Вендор</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<main class="page">
+
+			<article class="content padding-page">
+				<div class="pad-t-4"></div>
+
+				<header>
+					<h1 class="subline">
+						Имя вендора
+					</h1>
+					<div class="topic-small marg-t-2">
+						<div class="topic-small__img-vendor">
+							<img src="assets/templates/csoft/img/vendor-01.png" alt="">
+						</div>
+
+						<div>
+							<p class=" marg-t-1">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim
+								nisi
+								recusandae suscipit magnam
+								aspernatur, qui adipisci pariatur.
+							</p>
+							<div class="marg-t-1">
+								<a href="#" class="s-bold">Официальный сайт</a>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<p class="marg-t-2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim nisi
+					recusandae suscipit magnam
+					aspernatur, qui adipisci pariatur. Beatae dolore, necessitatibus soluta laboriosam adipisci
+					officiis recusandae. Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim nisi recusandae
+					suscipit magnam
+					aspernatur, qui adipisci pariatur. Beatae dolore, necessitatibus soluta laboriosam adipisci
+					officiis recusandae.
+				</p>
+
+				<p class="marg-t-2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim nisi
+					recusandae suscipit magnam
+					aspernatur, qui adipisci pariatur. Beatae dolore, necessitatibus soluta laboriosam adipisci
+					officiis recusandae. Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim nisi recusandae
+					suscipit magnam
+					aspernatur, qui adipisci pariatur. Beatae dolore, necessitatibus soluta laboriosam adipisci
+					officiis recusandae.
+				</p>
+
+				<div class="pad-t-4">
+					<h2>
+						Продукты вендора
+					</h2>
+					<ul class="tags s-bold marg-t-2">
+						<li>
+							<a href="product-page.html">
+								TechnologiCS PDM
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								TecgnologiCS MES
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								IIoT CS
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								CADLib
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								SolidWorks
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								NX
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Vericut
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Solid Edge
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Spotlight
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								NanoCad
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								ElectriCS
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								NormaCS
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								RasterArts
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								NanoCad Механика
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Полигон
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Femap
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								TecgnologiCS MES
+							</a>
+						</li>
+						<li>
+							<a href="product-page.html">
+								Femap
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="pad-t-4">
+					<h2>Новости вендора</h2>
+					<p class="marg-t-1">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim
+						nisi recusandae
+						suscipit magnam
+						aspernatur, qui adipisci pariatur. Beatae dolore, necessitatibus soluta laboriosam adipisci
+						officiis
+						recusandae.
+					</p>
+					<div class="pad-t-2"></div>
+					<ul class="tags s-bold">
+						<li>
+							Все
+							<span class="u-light">
+								1979
+							</span>
+						</li>
+						<li>
+							Новости
+							<span class="u-light">
+								804
+							</span>
+						</li>
+						<li>
+							Мероприятия
+							<span class="u-light">
+								5
+							</span>
+						</li>
+						<li>
+							Акции
+							<span class="u-light">
+								12
+							</span>
+						</li>
+					</ul>
+
+					<div id="news-topics-container">
+
+						<div class="topic-small marg-t-2">
+							<a href="news-page.html" class="topic-small__img-wrapper">
+								<span class="topic-small__img-border"></span>
+								<img src="assets/templates/csoft/img/800x600-img-2.jpg" alt="">
+							</a>
+							<div>
+								<h3>Вышел CADmaster № 1</h3>
+								<p class=" marg-t-1">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim
+									nisi
+									recusandae suscipit magnam
+									aspernatur, qui adipisci pariatur.
+								</p>
+								<div class="marg-t-1">
+									<a href="news-page.html" class="s-bold">Подробнее</a>
+
+									<div class="paragraph-infographics marg-t-2">
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-location"></span>
+											Москва
+										</div>
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-calendar"></span>
+											1.10.2021 – 3.10.2021
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="topic-small marg-t-4">
+							<a href="news-page.html" class="topic-small__img-wrapper">
+								<span class="topic-small__img-border"></span>
+								<img src="assets/templates/csoft/img/800x600-img-3.jpg" alt="">
+							</a>
+							<div>
+								<h3>Обновление версии Archicad 25</h3>
+								<p class=" marg-t-1">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim
+									nisi
+									recusandae suscipit magnam
+									aspernatur, qui adipisci pariatur.
+								</p>
+								<div class="marg-t-1">
+									<a href="news-page.html" class="s-bold">Подробнее</a>
+
+									<div class="paragraph-infographics marg-t-2">
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-location"></span>
+											Москва
+										</div>
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-calendar"></span>
+											1.10.2021 – 3.10.2021
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="topic-small marg-t-4">
+							<a href="news-page.html" class="topic-small__img-wrapper">
+								<span class="topic-small__img-border"></span>
+								<img src="assets/templates/csoft/img/800x600-img-4.jpg" alt="">
+							</a>
+							<div>
+								<h3>Цикл обучающих вебинаров по NX CAM</h3>
+								<p class=" marg-t-1">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non, unde labore, enim
+									nisi
+									recusandae suscipit magnam
+									aspernatur, qui adipisci pariatur.
+								</p>
+								<div class="marg-t-1">
+									<a href="news-page.html" class="s-bold">Подробнее</a>
+
+									<div class="paragraph-infographics marg-t-2">
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-location"></span>
+											Москва
+										</div>
+										<div class="paragraph-infographics__item flex-h-center s-bold">
+											<span class="icon-calendar"></span>
+											1.10.2021 – 3.10.2021
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<form action="#" method="get" class="flex-w-center marg-t-3">
+						<button class="btn-load-more">
+							Загрузить Еще
+						</button>
+					</form>
+				</div>
+
+				<div class="pad-t-2"></div>
+			</article>
+		</main>
+
+<div class="newsletter">
+
+	<div class="newsletter-wrapper padding-page content">
+
+
+		<h4 id="newsletter-subline-info">Подпишитись на наши новости и специальные предложения</h4>
+
+		<form id="newsletter-form" action="#" class="feedback-form">
+
+
+			<div class="newsletter-form__input-container input-container-half-width">
+				<input id="newsletter__client-name" name="name" class="newsletter-form__input __req __name" type="text"
+					placeholder=" " />
+				<div class="newsletter-form__cut cut-name-width"></div>
+				<label for="newsletter__client-name" class="newsletter-form__placeholder">Ваше
+					имя</label>
+			</div>
+			<div class="newsletter-form__input-container input-container-half-width">
+				<input id="newsletter__client-email-address" name="email" class="newsletter-form__input __req __email"
+					type="text" placeholder=" " />
+				<div class="newsletter-form__cut cut-email-width"></div>
+				<label for="newsletter__client-email-address" class="newsletter-form__placeholder">Email</label>
+			</div>
+
+			<div class="feedback-form__checkbox-container">
+				<input id="newsletter__checkbox" type="checkbox" checked class="input __req __chackbox">
+				<label for="newsletter__checkbox" class="label s-light">Даю согласие на обработку персональных
+					данных</label>
+			</div>
+
+
+			<input type="hidden" id="token" name="token">
+
+
+			<button type="submit" class="feedback-form__btn">
+				Подписаться
+			</button>
+		</form>
+
+	</div>
+</div>
+<section class="footer">
+	<div class="footer__wrapper padding-page content">
+
+		<div class="footer__top-container">
+			<h3 class="footer__headline">
+				Группа компаний CSoft предлагает комплексные решения для автоматизации производства.
+			</h3>
+
+			<div class="footer__last-event">
+				<h3>Следующая</h3>
+				<span class="icon-calendar-big"></span>
+				<a href="#">
+					<h3>Online конференция</h3>
+				</a>
+			</div>
+		</div>
+
+		<nav>
+			<ul class="flex-h-center">
+				<li><a href="about.html">О компании</a></li>
+				<li><a href="solutions.html">Решения</a></li>
+				<li><a href="price.html">Цены</a></li>
+				<li><a href="news.html">Новости</a></li>
+				<li><a href="events.html">События</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
+			</ul>
+		</nav>
+
+		<div class="footer__bottom-container s-bold">
+			Наши вакансии
+			<a href="https://hh.ru/employer/4303" target="_blank" class="s-light">HeadHunter</a>
+		</div>
+	</div>
+</section>
+
+<footer class="footer-bottom-part">
+	<div class="footer-bottom-part__wrapper padding-page">
+		<div class="flex-h-center">
+			<a href="policy.html" title="Политика конфиденциальности">
+				<div class="icon-32x32 icon-policy"></div>
+			</a>
+			<a href="agreement.html" title="Пользовательское соглашение">
+				<div class="icon-32x32 icon-agreement"></div>
+			</a>
+			<i>© CSoft 2002−2021</i>
+		</div>
+		<div class="social-media s-light">
+			Присоединяйтесь к нам
+			<a href="#" target="_blank" class="logo-youtube"></a>
+			<a href="#" target="_blank" class="logo-habr"></a>
+		</div>
+	</div>
+</footer>
+	</div>
+
+</body>
+
+</html>

@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Решение</title>
+	<title>Решение ПЖЦ</title>
 
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/main.js" defer></script>
+	<link rel="stylesheet" href="assets/templates/csoft/css/style.css">
+	<script src="assets/templates/csoft/js/main.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 </head>
 
@@ -38,7 +38,7 @@
 
 			<div class="menu__body-wrapper-top">
 
-				<div class="flex-h-center marg-t-2">
+				<div class="flex-h-start marg-t-2">
 					<a href="index.html">
 						<div class="icon-16x16 icon-home"></div>
 					</a>
@@ -64,27 +64,25 @@
 			</div>
 
 			<div class="menu__body-wrapper-center">
-
-
 				<ul class="menu__list">
 
 					<li>
 						<a href="about.html" class="menu__link">о компании</a>
 						<ul class="menu__sub-list">
 							<li>
-								<a href="about.html#vendor" class="anchor-hash-content menu__sub-link">Наши вендоры</a>
+								<a href="vendors.html" class="anchor-hash-content menu__sub-link">Наши вендоры</a>
 							</li>
 							<li>
-								<a href="about.html#product" class="menu__sub-link">Продукты компании</a>
+								<a href="about.html#products" class="menu__sub-link">Продукты компании</a>
 							</li>
 							<li>
-								<a href="about.html#project" class="menu__sub-link">Проекты CSoft</a>
+								<a href="projects.html" class="menu__sub-link">Проекты CSoft</a>
 							</li>
 						</ul>
 					</li>
 
 					<li>
-						<a href="solution.html" class="menu__link">решения</a>
+						<a href="solutions.html" class="menu__link">решения</a>
 					</li>
 
 					<li>
@@ -96,10 +94,14 @@
 					</li>
 
 					<li>
+						<a href="events.html" class="menu__link">события</a>
+					</li>
+
+					<li>
 						<a href="contacts.html" class="menu__link">контакты</a>
 						<ul class="menu__sub-list">
 							<li>
-								<a href="contacts.html#office" class="menu__sub-link">Отделения CSoft</a>
+								<a href="contacts.html#offices" class="menu__sub-link">Отделения CSoft</a>
 							</li>
 							<li>
 								<a href="contacts.html#feedback" class="menu__sub-link">Обратная связь</a>
@@ -112,14 +114,18 @@
 					</li>
 
 				</ul>
-
-
 			</div>
 
 			<div class="menu__body-wrapper-bottom">
-				<cite class="flex-h-center marg-b-1">
-					© CSoft 2021
-				</cite>
+				<div class="flex-h-center marg-b-1">
+					<a href="policy.html" title="Политика конфиденциальности">
+						<div class="icon-32x32 icon-policy"></div>
+					</a>
+					<a href="agreement.html" title="Пользовательское соглашение">
+						<div class="icon-32x32 icon-agreement"></div>
+					</a>
+					<i>© CSoft 2002−2021</i>
+				</div>
 				<div class="flex-h-center marg-b-1">
 					<span class="s-light">Присоединяйтесь к нам</span>
 					<a href="#" class="logo-youtube"></a>
@@ -132,22 +138,27 @@
 
 </nav>
 		<div class="banner-small">
-			<video pip="false" muted loop poster="vid/banner-small.jpg">
-				<source type="video/webm" src="vid/banner-small.webm">
-				<source type="video/mp4" src="vid/banner-small.mp4">
+			<video pip="false" muted loop poster="assets/templates/csoft/vid/banner-small.jpg">
+				<source type="video/webm" src="assets/templates/csoft/vid/banner-small.webm">
+				<source type="video/mp4" src="assets/templates/csoft/vid/banner-small.mp4">
 			</video>
 			<div class="banner-small__content">
 				<div class="banner-small__content-wrapper padding-page content">
-					<nav id="banner-small__navigation" class="flex-h-center marg-t-1">
+					<nav id="banner-small__navigation" class="banner-small__navigation marg-t-1">
 						<a href="index.html">
 							<div class="icon-16x16 icon-home-white"></div>
 						</a>
 						<div class="icon-arrow-white"></div>
 						<a href="engineering.html">Машиностроение</a>
 						<div class="icon-arrow-white"></div>
-						<a href="#">Проепкт</a>
+						<a href="solutions.html">Решения</a>
+						<div class="icon-arrow-white"></div>
+						<a href="#">Решение ПЖЦ</a>
 					</nav>
-					<span class="banner-small__headline">Проепкт</span>
+
+					<div class="banner-small__headline-container">
+						<span class="banner-small__headline">Решение ПЖЦ</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -161,7 +172,7 @@
 				<header class="topic-container">
 					<div class="topic">
 						<h1 class="subline">
-							Страница проекта
+							Решение ПЖЦ
 						</h1>
 						<p class="marg-t-2">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi cumque nemo architecto
@@ -174,82 +185,559 @@
 							provident.
 						</p>
 						<p class="marg-t-1">
-							Tempora minus aspernatur perferendis, blanditiis repellat magni iusto commodi fugiat hic
-							doloremque eius! Eius unde
-							autem, facere accusantium esse expedita aliquid quidem non ut optio incidunt architecto
-							temporibus asperiores adipisci
-							nulla sapiente repudiandae, nihil ea dicta labore molestias iure modi! Deserunt saepe
-							praesentium beatae nemo
-							perspiciatis? Possimus, eos? Voluptatem iste minima tenetur id minus?
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi cumque nemo architecto
+							doloremque incidunt
+							laboriosam quae, similique cum iste voluptas pariatur adipisci vel perferendis, quibusdam
+							unde
+							neque qui! Architecto
+							praesentium quidem natus ullam nulla odit, soluta explicabo. Iure esse quae, fugit amet
+							accusamus eveniet labore
+							provident.
 						</p>
 					</div>
 
 					<div class="topic-banner">
 						<span class="topic-banner__decorative-border elem-1"></span>
 						<div class="topic-banner__img-wrapper elem-2">
-							<img class="topic-banner__vertical" src="img/600x800-img-10.jpg" alt="">
-							<img class="topic-banner__horizontal" src="img/800x600-img-10.jpg" alt="">
+							<img class="topic-banner__vertical" src="assets/templates/csoft/img/600x800-img-10.jpg"
+								alt="">
+							<img class="topic-banner__horizontal" src="assets/templates/csoft/img/800x600-img-10.jpg"
+								alt="">
 							<span class="topic-banner__img-border"></span>
 						</div>
 					</div>
 				</header>
 
 				<h2 class="marg-t-2">
-					Подзаголовок
+					Что мы предлагаем?
+				</h2>
+				<h4 class="marg-t-2">
+					Управление полным жизненным циклом продукции
+				</h4>
+				<p class="marg-t-1">
+					Подготовка производства и управления данными жизненного цикла, решение следующих задачи:
+				</p>
+				<ol class="marg-t-1">
+					<li>
+						Организация справочников НСИ: по выпускаемой продукции, применяемому оборудованию, используемым
+						инструментам и т.д.
+					</li>
+					<li>
+						Управление проектами по постановке новой продукции на производство, внедрению инноваций,
+						детализации их до уровня
+						работ и заданий с возможностью последующего контроля исполнения
+					</li>
+					<li>
+						Организация электронного архива технической документации и электронного документооборота,
+						управление жизненным циклом
+						и состоянием документов
+					</li>
+					<li>
+						Управление данными о составе изделий
+					</li>
+					<li>
+						Автоматизация технологической подготовки: создание технологических процессов, расчет параметров
+						и условий обработки,
+						трудовое и материальное нормирование
+					</li>
+					<li>
+						Формирование базы знаний по конструкторским и технологическим наработкам, эффективным
+						производственным решениям
+					</li>
+					<li>
+						Автоматизация процессов планирования и управления производством, в том числе:
+					</li>
+					<ol>
+						<li>
+							Управление заказами, взаимодействие с заказчиками, формирование плана поставок
+						</li>
+						<li>
+							Расчёт производственной программы (MPS), формирование производственных планов
+							подразделений
+						</li>
+						<li>
+							Формирование и отслеживание планов обеспечения производства
+						</li>
+						<li>
+							Производственный учёт и диспетчеризация: управление и контроль производства в режиме
+							реального времени, оптимизация
+							производственных потоков, контроль загрузки оборудования, использования ресурсов, партионный
+							учёт
+						</li>
+						<li>
+							Промышленный интернет вещей для мониторинга работы оборудования
+						</li>
+						<li>
+							Складской учёт (WMS-модуль): контроль поставки материалов, контроль движения
+							полуфабрикатов в производстве, учёт
+							готовой продукции.
+						</li>
+					</ol>
+					<li>
+						Управление качеством.
+					</li>
+					<li>
+						Автоматизация процессов планирования и управления работами по ТО и
+						планово-предупредительным ремонтам.
+					</li>
+					<li>
+						Управление данными жизненного цикла выпущенной продукции с ведением истории по каждому
+						экземпляру изделия.
+					</li>
+				</ol>
+
+
+
+				<img class="content__image marg-t-4" src="assets/templates/csoft/img/img-rnd-1.svg" alt="">
+
+
+
+
+				<h2 class="marg-t-4">
+					Как мы это делаем?
 				</h2>
 
-				<p class="marg-t-1">
-					Tempora minus aspernatur perferendis, blanditiis repellat magni iusto commodi fugiat hic
-					doloremque eius! Eius unde
-					autem, facere accusantium esse expedita aliquid quidem non ut optio incidunt architecto
-					temporibus asperiores adipisci
-					nulla sapiente repudiandae, nihil ea dicta labore molestias iure modi! Deserunt saepe
-					praesentium beatae nemo
-					perspiciatis? Possimus, eos? Voluptatem iste minima tenetur id minus?
-				</p>
 
-				<p class="marg-t-1">
-					Tempora minus aspernatur perferendis, blanditiis repellat magni iusto commodi fugiat hic
-					doloremque eius! Eius unde
-					autem, facere accusantium esse expedita aliquid quidem non ut optio incidunt architecto
-					temporibus asperiores adipisci
-					nulla sapiente repudiandae, nihil ea dicta labore molestias iure modi! Deserunt saepe
-					praesentium beatae nemo
-					perspiciatis? Possimus, eos? Voluptatem iste minima tenetur id minus?
+				<div class="accordeon marg-t-2">
+					<h4>
+						Аудит технологий и бизнес-процессов
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Обследование процессов основной деятельности и разработка концепции системы цифрового
+							моделирования
+							сооружений
+						</li>
+						<li>
+							Обследование существующих процессов производственного блока и используемых информационных
+							систем
+						</li>
+						<li>
+							Фиксация функциональной декомпозиции существующих информационных систем
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Разработка концепции развития и создания ИТ-Решения на предприятии
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Разработка функциональных требований к системе цифрового управления полным жизненным циклом
+							изделий
+						</li>
+						<li>
+							Разработка целевой принципиальной архитектуры программных средств и функциональной
+							декомпозиции
+							системы управления
+							полным жизненным циклом изделий
+						</li>
+						<li>
+							Формирование основных принципов выполнения работ по подготовке и производству в системе
+							цифрового
+							управления полным
+							жизненным циклом изделий
+						</li>
+						<li>
+							Формирование спецификации программных продуктов для построения системы цифрового управления
+							полным
+							жизненным циклом
+							изделий
+						</li>
+						<li>
+							Разработка плана внедрения
+						</li>
+						<li>
+							Разработка бюджетной оценки проекта внедрения системы цифрового управления полным жизненным
+							циклом
+							изделий
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Выбор пилотной зоны для отработки функциональных решений
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Управление НСИ
+						</li>
+						<li>
+							Управление проектами
+						</li>
+						<li>
+							Конструкторскую подготовку производства
+						</li>
+						<li>
+							Технологическую подготовку производства
+						</li>
+						<li>
+							Нормирование
+						</li>
+						<li>
+							Планирование и диспетчеризация производства
+						</li>
+						<li>
+							Промышленный интернет вещей
+						</li>
+						<li>
+							Складской учет
+						</li>
+						<li>
+							Управление качеством
+						</li>
+						<li>
+							Управление ТОиР
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Поставка, установка и настройка компонентов решения
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Поставка таргетированной спецификации ПО
+						</li>
+						<li>
+							Установка ПО на рабочие места пользователей, согласно объёмным рамкам проекта
+						</li>
+						<li>
+							Выполнение необходимых настроек, доработок и интеграционных возможностей согласно
+							разработанным
+							ЧТЗ
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Разработка технической и эксплуатационной документации
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Разработка технических описаний произведенных настроек
+						</li>
+						<li>
+							Разработка технических описаний произведенных доработок
+						</li>
+						<li>
+							Разработка технических описаний произведенных интеграционных возможностей
+						</li>
+						<li>
+							Разработка пользовательских инструкций, согласно выполняемым ролям в системе
+						</li>
+						<li>
+							Разработка документации по администрированию системы
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Обучение пользователей
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Создание плана обучение пользователей согласно логическим блокам и исполняемым процессам
+						</li>
+						<li>
+							Создание программы обучения пользователей согласно выполняемым функциям в системе
+						</li>
+						<li>
+							Проведение обучение пользователей
+						</li>
+						<li>
+							Тестирование пользователей
+						</li>
+					</ol>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Введение решения в Опытно-промышленную эксплуатацию, ввод в эксплуатацию, сопровождение и
+						техническая поддержка
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Создание плана ОПЭ
+						</li>
+						<li>
+							Введение в ОПЭ
+						</li>
+						<li>
+							Создание и ведение реестра замечаний
+						</li>
+						<li>
+							Согласование и устранение замечаний, выявленных в ходе ОПЭ
+						</li>
+						<li>
+							Ввод системы в системы в эксплуатацию
+						</li>
+						<li>
+							Создание центра компетенции по обслуживанию и сопровождение Решения
+						</li>
+						<li>
+							Создание регламента технической поддержки Решения
+						</li>
+					</ol>
+				</div>
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Последующее совершенствование системы
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<ol>
+						<li>
+							Накопление статистической информации о работе пользователей в системе, за периоды (месяц,
+							квартал, год…)
+						</li>
+						<li>
+							Ведение реестра по пожеланиям доработки Решения
+						</li>
+						<li>
+							Создание совета ключевых пользователей для фиксации требования к развитию Решения
+						</li>
+						<li>
+							Разработка предложения по развитию системы
+						</li>
+					</ol>
+				</div>
+
+
+
+				<h2 class="marg-t-4">
+					Что вы получаете?
+				</h2>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Экономический эффект
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<table class="marg-t-1">
+						<tr>
+							<td class="width-golden-ratio">Сокращение издержек на КТПП</td>
+							<td>до 20%</td>
+						</tr>
+						<tr>
+							<td>Повышение производительности труда</td>
+							<td>до 45%</td>
+						</tr>
+						<tr>
+							<td>Сокращение производственных издержек (брак, “незавершенка”, простои)</td>
+							<td>до 20%</td>
+						</tr>
+						<tr>
+							<td>Повышение качества продукции</td>
+							<td>до 32%</td>
+						</tr>
+					</table>
+					<p class="marg-t-2">
+						Снижение стоимости исправления ошибки, за счет ее выявления на стадиях проектирования и
+						оперативной
+						обратной связи
+						производства с подготовительными подразделениями:
+					</p>
+					<table class="marg-t-1">
+						<thead>
+							<tr>
+								<th>Стадия подготовки производства</th>
+								<th>Стоимость исправления ошибки</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Концептуальное проектирование</td>
+								<td>$1</td>
+							</tr>
+							<tr>
+								<td>Конструкторская проработка изделия</td>
+								<td>$10</td>
+							</tr>
+							<tr>
+								<td>Изготовление макета изделия</td>
+								<td>$100</td>
+							</tr>
+							<tr>
+								<td>Изготовление макета изделия</td>
+								<td>$100</td>
+							</tr>
+							<tr>
+								<td>Проектирование технологической оснастки</td>
+								<td>$1000</td>
+							</tr>
+							<tr>
+								<td>Изготовление оснастки</td>
+								<td>$10000</td>
+							</tr>
+							<tr>
+								<td>Выпуск установочной серии</td>
+								<td>$100000</td>
+							</tr>
+							<tr>
+								<td>Серийное производство</td>
+								<td>$1000000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Организационный эффект
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<table class="marg-t-1">
+						<tr>
+							<td class="width-golden-ratio">Сокращение сроков КТПП</td>
+							<td>до 15 раз</td>
+						</tr>
+						<tr>
+							<td>Оптимизация всех внутренних процессов</td>
+							<td>да</td>
+						</tr>
+						<tr>
+							<td>Сокращение производственных издержек (брак, «незавершенка», простои)</td>
+							<td>до 20%</td>
+						</tr>
+						<tr>
+							<td>Снижение простоя оборудования</td>
+							<td>до 35%</td>
+						</tr>
+						<tr>
+							<td>Повышение точности снабжения производства</td>
+							<td>до 50%</td>
+						</tr>
+						<tr>
+							<td>«Расшитие узких мест»</td>
+							<td>до 100%</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+				<div class="accordeon marg-t-1">
+					<h4>
+						Технологический эффект
+					</h4>
+					<div class="icon-polygon-grey"></div>
+				</div>
+				<div class="accordeon-panel">
+					<table class="marg-t-1">
+						<tr>
+							<td class="width-golden-ratio">Инвестиционная привлекательность предприятия</td>
+							<td>да</td>
+						</tr>
+						<tr>
+							<td>Возможность предоставления достоверной и прозрачной информации для субсидирования</td>
+							<td>да</td>
+						</tr>
+						<tr>
+							<td>Эффективное масштабирование производства</td>
+							<td>да</td>
+						</tr>
+						<tr>
+							<td>Повышение горизонта планирования производственных мощностей</td>
+							<td>да</td>
+						</tr>
+					</table>
+				</div>
+
+				<p class="marg-t-2">
+					Ссылки на ознакомление с <a href="#">производственными референсами</a>
 				</p>
 
 				<div class="pad-t-4"></div>
 			</article>
 		</main>
 
-<div class="newsletter">
+<div class="feedback">
 
-	<div class="newsletter-wrapper padding-page content">
-
-
-		<h4 id="newsletter-subline-info">Подпишитись на наши новости и специальные предложения</h4>
-
-		<form id="newsletter-form" action="#" class="feedback-form">
+	<div class="feedback-wrapper padding-page content">
 
 
-			<div class="newsletter-form__input-container input-container-half-width">
-				<input id="newsletter__client-name" name="name" class="newsletter-form__input __req __name" type="text"
+		<h4 id="feedback-subline-info">Напишите нам, мы рады помочь</h4>
+
+		<form id="feedback-form" action="#" class="feedback-form">
+
+
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-name" name="name" class="feedback-form__input __req __name" type="text"
 					placeholder=" " />
-				<div class="newsletter-form__cut cut-name-width"></div>
-				<label for="newsletter__client-name" class="newsletter-form__placeholder">Ваше
+				<div class="feedback-form__cut cut-name-width"></div>
+				<label for="feedback__client-name" class="feedback-form__placeholder">Ваше
 					имя</label>
 			</div>
-			<div class="newsletter-form__input-container input-container-half-width">
-				<input id="newsletter__client-email-address" name="email" class="newsletter-form__input __req __email"
+			<div class="feedback-form__input-container input-container-half-width">
+				<input id="feedback__client-email-address" name="email" class="feedback-form__input __req __email"
 					type="text" placeholder=" " />
-				<div class="newsletter-form__cut cut-email-width"></div>
-				<label for="newsletter__client-email-address" class="newsletter-form__placeholder">Email</label>
+				<div class="feedback-form__cut cut-email-width"></div>
+				<label for="feedback__client-email-address" class="feedback-form__placeholder">Email</label>
 			</div>
-
+			<div class="feedback-form__input-container">
+				<textarea id="feedback__message" name="message"
+					class="feedback-form__input feedback-form__input-message  __req __message" cols="100500"
+					placeholder=" "></textarea>
+				<div class="feedback-form__cut cut-message-width"></div>
+				<label for="feedback__message" class="feedback-form__placeholder">Сообщение</label>
+			</div>
 			<div class="feedback-form__checkbox-container">
-				<input id="newsletter__checkbox" type="checkbox" checked class="input __req __chackbox">
-				<label for="newsletter__checkbox" class="label s-light">Даю согласие на обработку персональных
-					данных</label>
+				<input id="feedback__checkbox" type="checkbox" checked class="input __req __chackbox">
+				<label for="feedback__checkbox" class="label s-light">
+					<span>Согласен на обработку данных в соответствии с&#160;<a href="policy.html">политикой
+							конфиденциальности</a></span>
+				</label>
 			</div>
 
 
@@ -257,13 +745,13 @@
 
 
 			<button type="submit" class="feedback-form__btn">
-				Подписаться
+				Отправить
 			</button>
 		</form>
 
 	</div>
 </div>
-<footer class="footer">
+<section class="footer">
 	<div class="footer__wrapper padding-page content">
 
 		<div class="footer__top-container">
@@ -283,9 +771,10 @@
 		<nav>
 			<ul class="flex-h-center">
 				<li><a href="about.html">О компании</a></li>
-				<li><a href="solution.html">Решения</a></li>
+				<li><a href="solutions.html">Решения</a></li>
 				<li><a href="price.html">Цены</a></li>
 				<li><a href="news.html">Новости</a></li>
+				<li><a href="events.html">События</a></li>
 				<li><a href="contacts.html">Контакты</a></li>
 			</ul>
 		</nav>
@@ -295,18 +784,26 @@
 			<a href="https://hh.ru/employer/4303" target="_blank" class="s-light">HeadHunter</a>
 		</div>
 	</div>
-</footer>
+</section>
 
-<div class="footer-bottom-part">
+<footer class="footer-bottom-part">
 	<div class="footer-bottom-part__wrapper padding-page">
-		<i>© CSoft 2021</i>
+		<div class="flex-h-center">
+			<a href="policy.html" title="Политика конфиденциальности">
+				<div class="icon-32x32 icon-policy"></div>
+			</a>
+			<a href="agreement.html" title="Пользовательское соглашение">
+				<div class="icon-32x32 icon-agreement"></div>
+			</a>
+			<i>© CSoft 2002−2021</i>
+		</div>
 		<div class="social-media s-light">
 			Присоединяйтесь к нам
 			<a href="#" target="_blank" class="logo-youtube"></a>
 			<a href="#" target="_blank" class="logo-habr"></a>
 		</div>
 	</div>
-</div>
+</footer>
 	</div>
 
 </body>

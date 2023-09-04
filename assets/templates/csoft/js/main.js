@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		BANNER_SMALL.querySelector('video').play()
 
 		if (window.innerWidth >= 481) {
-			BANNER_SMALL.querySelector('.banner-small__content-wrapper').appendChild(cloneH1)
+			BANNER_SMALL.querySelector('.banner-small__headline-container').appendChild(cloneH1)
 			gsap.set(cloneH1, {
 				transformOrigin: "0 0",
-				scale: 2,
-				y: -125,
+				scale: 1.4,
+				y: 4,
 				x: -20,
 				opacity: 0,
 				pointerEvents: "none"
 			})
-			gsap.to(cloneH1, 3, { x: 5, opacity: 0.3, ease: Power1.easeInOut })
+			gsap.to(cloneH1, 3, { x: 5, opacity: 0.14, ease: Power1.easeInOut })
 		}
 
 		gsap.set(BANNER_SMALL_NAVI, { y: -10, opacity: 0 })
@@ -131,6 +131,54 @@ document.addEventListener('DOMContentLoaded', function () {
 				tagItem.addEventListener('click', e => {
 					tagItem.classList.toggle('__active')
 				})
+			})
+		})
+	}
+
+
+
+
+	//? календарь мероприятий
+	if (document.querySelector('.calendar') && document.querySelector('.event-day') && document.getElementById('calendar_swiper_wrapper')) {
+		let eventDays = document.querySelectorAll('.event-day')
+		let firstEvent = JSON.parse(eventDays[0].getAttribute("data-src"))
+		let calendarSwiperWrapper = document.getElementById("calendar_swiper_wrapper")
+		let calendarSwiperSettings = {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+			},
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: true
+			},
+			speed: 500
+		}
+
+		calendarSwiperWrapper.innerHTML = ""
+		for (let i = 0; i < firstEvent.length; i++) {
+			calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + firstEvent[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + firstEvent[i][0] + '</h3><p class="marg-t-2">' + firstEvent[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+		}
+		let calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+
+		eventDays.forEach(eventDay => {
+			eventDay.addEventListener('click', e => {
+				calendarSwiper.destroy()
+				calendarSwiperWrapper.removeAttribute('style')
+				calendarSwiperWrapper.innerHTML = ""
+				let currentDayEvents = JSON.parse(e.target.getAttribute("data-src"))
+				for (let i = 0; i < currentDayEvents.length; i++) {
+					calendarSwiperWrapper.insertAdjacentHTML('beforeend', '<div class="swiper-slide"><div class="swiper-calendar__picture"><img src="' + currentDayEvents[i][2] + '" alt=""></div><div class="swiper-calendar__content"><h3>' + currentDayEvents[i][0] + '</h3><p class="marg-t-2">' + currentDayEvents[i][1] + '</p><a href="#" class="s-bold marg-t-1">Подробнее</a></div></div>')
+				}
+				calendarSwiper = new Swiper('.swiper-calendar', calendarSwiperSettings)
+				for (let d = 0; d < eventDays.length; d++) {
+					eventDays[d].classList.remove('event-day-clicked')
+				}
+				e.target.classList.add('event-day-clicked')
 			})
 		})
 	}
@@ -198,6 +246,20 @@ document.addEventListener('DOMContentLoaded', function () {
 			speed: 500,
 			loop: 'true'
 
+		})
+	}
+
+	//? аккордеон
+	let accordeon = document.getElementsByClassName("accordeon")
+	for (let i = 0; i < accordeon.length; i++) {
+		accordeon[i].addEventListener("click", function () {
+			this.classList.toggle("accordeon-active")
+			let panel = this.nextElementSibling
+			if (panel.style.display === "block") {
+				panel.style.display = "none"
+			} else {
+				panel.style.display = "block"
+			}
 		})
 	}
 
@@ -593,36 +655,36 @@ if (document.querySelector('.map__ineractive-container')) {
 
 	const MAP = document.querySelector('.map__bg')
 	let currentScale = 0
-	let currentScaleY = 0
+	// let currentScaleY = 0
 	let officeInfo = document.querySelector('.map__office-info-cont')
 	let targets = document.querySelectorAll('.icon-target')
 
 	const KALININGRAD = document.getElementById('kaliningrad')
-	const PETERBURG = document.getElementById('petersburg')
+	const SANKT_PETERBURG = document.getElementById('sankt-peterburg')
 	const KRASNODAR = document.getElementById('krasnodar')
 	const VOLGOGRAD = document.getElementById('volgograd')
-	const MOSCOW = document.getElementById('moscow')
+	const MOSKVA = document.getElementById('moskva')
 	const VORONEZH = document.getElementById('voronezh')
 	const IVANOVO = document.getElementById('ivanovo')
-	const NIZHNIY_NOVGOROD = document.getElementById('nizhny-novgorod')
+	const NIZHNIJ_NOVGOROD = document.getElementById('nizhnij-novgorod')
 	const KAZAN = document.getElementById('kazan')
 	const SAMARA = document.getElementById('samara')
 	const TYMEN = document.getElementById('tyumen')
 	const OMSK = document.getElementById('omsk')
 	const NOVOSIBIRSK = document.getElementById('novosibirsk')
 	const KRASNOYARSK = document.getElementById('krasnoyarsk')
-	const KHABAROVSK = document.getElementById('khabarovsk')
+	const HABAROVSK = document.getElementById('habarovsk')
 
 	window.addEventListener('load', e => {
 		calculation()
 
 		targets.forEach(target => {
-			target.addEventListener('click', e => {
+			target.addEventListener('mouseover', e => {
 				let delay = 0
 				targets.forEach(target => {
-					delay += 0.025
+					delay += 0.01
 					if (target.id !== e.target.id) {
-						gsap.to(target, 0.25, { opacity: 0.15, delay: delay })
+						gsap.to(target, 0.5, { opacity: 0.15, delay: delay, ease: Power0.easeNone })
 					}
 				})
 				gsap.set(officeInfo, { y: 20, opacity: 0 })
@@ -632,7 +694,25 @@ if (document.querySelector('.map__ineractive-container')) {
 				officeInfo.querySelector('a').innerHTML = target.getAttribute('data-city')
 				officeInfo.querySelector('a').setAttribute('href', target.getAttribute('data-link') + target.getAttribute('data-city'))
 				officeInfo.style.left = 'calc(' + target.style.left + ' - ' + officeInfo.clientWidth / 2 + 'px' + ' + 10px)'
-				officeInfo.style.top = 'calc(' + target.style.top + ' + 16px)'
+				officeInfo.style.top = 'calc(' + target.style.top + ' + 12px)'
+			})
+
+			target.addEventListener('click', e => {
+				let delay = 0
+				targets.forEach(target => {
+					delay += 0.01
+					if (target.id !== e.target.id) {
+						gsap.to(target, 0.5, { opacity: 0.15, delay: delay, ease: Power0.easeNone })
+					}
+				})
+				gsap.set(officeInfo, { y: 20, opacity: 0 })
+				gsap.to(officeInfo, 1, { opacity: 1, y: 0, ease: Power1.easeOut })
+				gsap.to(target, 0.25, { opacity: 1 })
+				officeInfo.style.display = 'block'
+				officeInfo.querySelector('a').innerHTML = target.getAttribute('data-city')
+				officeInfo.querySelector('a').setAttribute('href', target.getAttribute('data-link') + target.getAttribute('data-city'))
+				officeInfo.style.left = 'calc(' + target.style.left + ' - ' + officeInfo.clientWidth / 2 + 'px' + ' + 10px)'
+				officeInfo.style.top = 'calc(' + target.style.top + ' + 12px)'
 			})
 		})
 
@@ -656,19 +736,19 @@ if (document.querySelector('.map__ineractive-container')) {
 		currentScale = document.querySelector('.map__wrapper').clientWidth / (1740 - 36 * 2) //! учитываем значение 36 - это отступ по краям карты
 
 		gsap.set(KALININGRAD, { left: 37 * currentScale - 8, top: 190 * currentScale - 16 })
-		gsap.set(PETERBURG, { left: 280 * currentScale - 8, top: 175 * currentScale - 16 })
+		gsap.set(SANKT_PETERBURG, { left: 280 * currentScale - 8, top: 175 * currentScale - 16 })
 		gsap.set(KRASNODAR, { left: 60 * currentScale - 8, top: 355 * currentScale - 16 })
 		gsap.set(VOLGOGRAD, { left: 200 * currentScale - 8, top: 335 * currentScale - 16 })
-		gsap.set(MOSCOW, { left: 200 * currentScale - 8, top: 275 * currentScale - 16 })
-		gsap.set(VORONEZH, { left: 190 * currentScale - 8, top: 305 * currentScale - 16 })
+		gsap.set(MOSKVA, { left: 200 * currentScale - 8, top: 265 * currentScale - 16 })
+		gsap.set(VORONEZH, { left: 190 * currentScale - 8, top: 300 * currentScale - 16 })
 		gsap.set(IVANOVO, { left: 260 * currentScale - 8, top: 235 * currentScale - 16 })
-		gsap.set(NIZHNIY_NOVGOROD, { left: 310 * currentScale - 8, top: 255 * currentScale - 16 })
+		gsap.set(NIZHNIJ_NOVGOROD, { left: 310 * currentScale - 8, top: 255 * currentScale - 16 })
 		gsap.set(KAZAN, { left: 380 * currentScale - 8, top: 285 * currentScale - 16 })
 		gsap.set(SAMARA, { left: 450 * currentScale - 8, top: 355 * currentScale - 16 })
 		gsap.set(TYMEN, { left: 660 * currentScale - 8, top: 405 * currentScale - 16 })
 		gsap.set(OMSK, { left: 850 * currentScale - 8, top: 520 * currentScale - 16 })
 		gsap.set(NOVOSIBIRSK, { left: 950 * currentScale - 8, top: 470 * currentScale - 16 })
 		gsap.set(KRASNOYARSK, { left: 1105 * currentScale - 8, top: 450 * currentScale - 16 })
-		gsap.set(KHABAROVSK, { left: 1450 * currentScale - 8, top: 500 * currentScale - 16 })
+		gsap.set(HABAROVSK, { left: 1450 * currentScale - 8, top: 500 * currentScale - 16 })
 	}
 }

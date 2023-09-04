@@ -74,10 +74,11 @@
 		background-color: $color_5;
 	}
 	&__wrapper {
+		background-color: $color_1;
 		min-height: inherit;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 }
 
@@ -113,8 +114,6 @@
 	}
 	.footer-bottom-part {
 		&__wrapper {
-			flex-direction: column;
-			align-items: flex-start;
 			i {
 				margin-top: 1.7rem;
 				margin-bottom: 1.7rem;
