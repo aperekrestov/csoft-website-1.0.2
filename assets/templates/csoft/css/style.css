@@ -1062,6 +1062,10 @@ body._lock {
     position: unset;
     text-align: left;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfd91576bf26bd1d0c806ce8a0baa48fa6eaa06a
   .menu__list > li .menu__link {
     margin-left: unset;
   }
@@ -2134,7 +2138,11 @@ body._lock {
   margin-bottom: 0.7rem;
 }
 .calendar__days-week-item {
+<<<<<<< HEAD
   width: 14.2857142857%;
+=======
+  width: calc(100% / 7);
+>>>>>>> dfd91576bf26bd1d0c806ce8a0baa48fa6eaa06a
   height: 100%;
   margin-left: 0.5rem;
 }
@@ -2147,8 +2155,13 @@ body._lock {
 .calendar__day-of-month {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   width: 14.2857142857%;
   height: 20%;
+=======
+  width: calc(100% / 7);
+  height: calc(100% / 5);
+>>>>>>> dfd91576bf26bd1d0c806ce8a0baa48fa6eaa06a
   border: 0.5px solid #e6eaea;
   padding: 0.5rem 0.3rem 0.5rem 0.5rem;
   color: #c3c7c6;
@@ -2405,6 +2418,10 @@ body._lock {
     width: 100%;
     height: auto;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfd91576bf26bd1d0c806ce8a0baa48fa6eaa06a
   .swiper-calendar .swiper-button-prev,
 .swiper-calendar .swiper-button-next {
     display: none;
@@ -2485,6 +2502,10 @@ body._lock {
   .topic-small__img-vendor {
     display: none;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfd91576bf26bd1d0c806ce8a0baa48fa6eaa06a
   .article-banner {
     background-position: bottom 0% right -600px;
   }
