@@ -135,9 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	}
 
-
-
-
 	//? календарь мероприятий
 	if (document.querySelector('.calendar') && document.querySelector('.event-day') && document.getElementById('calendar_swiper_wrapper')) {
 		let eventDays = document.querySelectorAll('.event-day')
@@ -261,6 +258,50 @@ document.addEventListener('DOMContentLoaded', function () {
 				panel.style.display = "block"
 			}
 		})
+	}
+
+
+	//? интерактивный модуль
+	if (document.getElementById('ineractive-module')) {
+		console.log('neractive-module')
+		let moduleContainer = document.querySelector('.interactive-module__cg-wrapper')
+		let pdm = moduleContainer.querySelector('.interactive-module__pdm-area')
+		let tdm = moduleContainer.querySelector('.interactive-module__tdm-area')
+		let capp = moduleContainer.querySelector('.interactive-module__capp-area')
+		let mps_aps = moduleContainer.querySelector('.interactive-module__mps_aps-area')
+		let mrp = moduleContainer.querySelector('.interactive-module__mrp-area')
+		let mes = moduleContainer.querySelector('.interactive-module__mes-area')
+		let eam = moduleContainer.querySelector('.interactive-module__eam-area')
+		let qm = moduleContainer.querySelector('.interactive-module__qm-area')
+		let plm_bi = moduleContainer.querySelector('.interactive-module__plm_bi-area')
+
+		pdm.onmouseover = function(e) { moduleOver(e, 'pdm') }
+		tdm.onmouseover = function(e) { moduleOver(e, 'tdm') }
+		capp.onmouseover = function(e) { moduleOver(e, 'capp') }
+		mps_aps.onmouseover = function(e) { moduleOver(e, 'mps_aps') }
+		mrp.onmouseover = function(e) { moduleOver(e, 'mrp') }
+		mes.onmouseover = function(e) { moduleOver(e, 'mes') }
+		eam.onmouseover = function(e) { moduleOver(e, 'eam') }
+		qm.onmouseover = function(e) { moduleOver(e, 'qm') }
+		plm_bi.onmouseover = function(e) { moduleOver(e, 'plm_bi') }
+
+		function moduleOver(e, target) {
+			// console.log(target)
+			modulesFade(target)
+			markTargetModule(target)
+		}
+		function modulesFade(target) {
+			
+			// TweenMax.killTweensOf("*")
+			// TweenMax.to([pdm, tdm, capp, mps_aps, mrp, mes, eam, qm, plm_bi],  1, { filter:"drop-shadow(0px 0px 0px rgba(61, 68, 81, 0))", opacity: 0.3, ease: Power4.easeOut})
+			TweenMax.to([pdm, tdm, capp, mps_aps, mrp, mes, eam, qm, plm_bi],  1, { opacity: 0.3, ease: Power4.easeOut})
+			TweenMax.killTweensOf(moduleContainer.querySelector('.interactive-module__' + target + '-area'))
+		}
+		function markTargetModule(target) {
+			console.log('mark ' + target);
+			TweenMax.to(moduleContainer.querySelector('.interactive-module__' + target + '-area'), 0.75, { opacity: 1, ease: Power4.easeOut })
+			// TweenMax.to(moduleContainer.querySelector('.interactive-module__' + target + '-area'), 0.75, { filter:"drop-shadow(1px 3px 4px rgba(61, 68, 81, 0.25))", opacity: 1, ease: Power4.easeOut })
+		}
 	}
 
 

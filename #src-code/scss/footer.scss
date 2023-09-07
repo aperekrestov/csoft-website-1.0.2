@@ -64,7 +64,7 @@
 .footer-bottom-part {
 	position: relative;
 	width: 100%;
-	min-height: 80px;
+	min-height: 100px;
 	background-color: $color_1;
 	&::before {
 		content: "";
@@ -79,6 +79,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 

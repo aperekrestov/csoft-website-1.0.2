@@ -16,12 +16,6 @@ body._lock {
 	}
 }
 
-// #vendor:before {
-// 	display: block;
-// 	content: "";
-// 	height: 32px;
-// 	margin: -32px 0 0;
-// }
 // ? добавляем корректирующий отступ якорной ссылке
 #products:before {
 	display: block;
@@ -35,12 +29,7 @@ body._lock {
 	height: 70px;
 	margin: -70px 0 0;
 }
-// #project:before {
-// 	display: block;
-// 	content: "";
-// 	height: 80px;
-// 	margin: -80px 0 0;
-// }
+
 
 .menu {
 	position: sticky;
@@ -191,6 +180,7 @@ body._lock {
 	}
 }
 .menu__list > li {
+	// list-style-type:  none;
 	font-size: 2rem;
 	margin-bottom: 2rem;
 	text-transform: uppercase;
@@ -199,6 +189,7 @@ body._lock {
 		margin-left: 2rem;
 	}
 	.menu__sub-link {
+
 		transition: all 0.5s ease;
 		margin-right: 2rem;
 		opacity: 0;
