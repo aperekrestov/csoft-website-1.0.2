@@ -262,46 +262,66 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	//? интерактивный модуль
-	if (document.getElementById('ineractive-module')) {
-		console.log('neractive-module')
-		let moduleContainer = document.querySelector('.interactive-module__cg-wrapper')
-		let pdm = moduleContainer.querySelector('.interactive-module__pdm-area')
-		let tdm = moduleContainer.querySelector('.interactive-module__tdm-area')
-		let capp = moduleContainer.querySelector('.interactive-module__capp-area')
-		let mps_aps = moduleContainer.querySelector('.interactive-module__mps_aps-area')
-		let mrp = moduleContainer.querySelector('.interactive-module__mrp-area')
-		let mes = moduleContainer.querySelector('.interactive-module__mes-area')
-		let eam = moduleContainer.querySelector('.interactive-module__eam-area')
-		let qm = moduleContainer.querySelector('.interactive-module__qm-area')
-		let plm_bi = moduleContainer.querySelector('.interactive-module__plm_bi-area')
+	if (document.getElementById('interactive-module')) {
+		// console.log('neractive-module')
+		let interactiveModule = document.getElementById('interactive-module')
+		let moduleAreasArr = [
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__pdm-area'),
+				'content': interactiveModule.querySelector('.interactive-module__pdm')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__tdm-area'),
+				'content': interactiveModule.querySelector('.interactive-module__tdm')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__capp-area'),
+				'content': interactiveModule.querySelector('.interactive-module__capp')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__mps_aps-area'),
+				'content': interactiveModule.querySelector('.interactive-module__mps_aps')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__mrp-area'),
+				'content': interactiveModule.querySelector('.interactive-module__mrp')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__mes-area'),
+				'content': interactiveModule.querySelector('.interactive-module__mes')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__eam-area'),
+				'content': interactiveModule.querySelector('.interactive-module__eam')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__qm-area'),
+				'content': interactiveModule.querySelector('.interactive-module__qm')
+			},
+			{
+				'interactiveArea': interactiveModule.querySelector('.interactive-module__plm_bi-area'),
+				'content': interactiveModule.querySelector('.interactive-module__plm_bi')
+			},
+		]
 
-		pdm.onmouseover = function(e) { moduleOver(e, 'pdm') }
-		tdm.onmouseover = function(e) { moduleOver(e, 'tdm') }
-		capp.onmouseover = function(e) { moduleOver(e, 'capp') }
-		mps_aps.onmouseover = function(e) { moduleOver(e, 'mps_aps') }
-		mrp.onmouseover = function(e) { moduleOver(e, 'mrp') }
-		mes.onmouseover = function(e) { moduleOver(e, 'mes') }
-		eam.onmouseover = function(e) { moduleOver(e, 'eam') }
-		qm.onmouseover = function(e) { moduleOver(e, 'qm') }
-		plm_bi.onmouseover = function(e) { moduleOver(e, 'plm_bi') }
+		for (let i = 0; i < moduleAreasArr.length; i++) {
+			moduleAreasArr[i].interactiveArea.onmouseover = function(e) { moduleAreaOver(e, i) }	
+		}
+		
+		function moduleAreaOver(e, i) {
+			let prew = i === 0 ? moduleAreasArr.length - 1 : i - 1
+			let next = i === moduleAreasArr.length - 1 ? 0 : i + 1
+			for (let n = 0; n < moduleAreasArr.length; n++) {	
+				TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
+				TweenMax.to(moduleAreasArr[n].interactiveArea,  1.2, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
+				moduleAreasArr[n].content.style.display = 'none'
+			}
+			TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
+			moduleAreasArr[i].content.style.display = 'block'
+			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea],  0.6, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
+			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.7, { opacity: 1, scale:1, ease: Power4.easeOut })
+		}
 
-		function moduleOver(e, target) {
-			// console.log(target)
-			modulesFade(target)
-			markTargetModule(target)
-		}
-		function modulesFade(target) {
-			
-			// TweenMax.killTweensOf("*")
-			// TweenMax.to([pdm, tdm, capp, mps_aps, mrp, mes, eam, qm, plm_bi],  1, { filter:"drop-shadow(0px 0px 0px rgba(61, 68, 81, 0))", opacity: 0.3, ease: Power4.easeOut})
-			TweenMax.to([pdm, tdm, capp, mps_aps, mrp, mes, eam, qm, plm_bi],  1, { opacity: 0.3, ease: Power4.easeOut})
-			TweenMax.killTweensOf(moduleContainer.querySelector('.interactive-module__' + target + '-area'))
-		}
-		function markTargetModule(target) {
-			console.log('mark ' + target);
-			TweenMax.to(moduleContainer.querySelector('.interactive-module__' + target + '-area'), 0.75, { opacity: 1, ease: Power4.easeOut })
-			// TweenMax.to(moduleContainer.querySelector('.interactive-module__' + target + '-area'), 0.75, { filter:"drop-shadow(1px 3px 4px rgba(61, 68, 81, 0.25))", opacity: 1, ease: Power4.easeOut })
-		}
 	}
 
 
