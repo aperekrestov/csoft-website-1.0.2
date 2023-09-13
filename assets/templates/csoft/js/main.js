@@ -265,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (document.getElementById('interactive-module')) {
 		// console.log('neractive-module')
 		let interactiveModule = document.getElementById('interactive-module')
+		let cgWrapper = interactiveModule.querySelector('.interactive-module__cg-container')
 		let moduleAreasArr = [
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__pdm-area'),
@@ -304,6 +305,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		]
 
+		defoltModuleView()
+		cgWrapper.onmouseleave = function(e){
+			defoltModuleView()
+		}
+
 		for (let i = 0; i < moduleAreasArr.length; i++) {
 			moduleAreasArr[i].interactiveArea.onmouseover = function(e) { moduleAreaOver(e, i) }	
 		}
@@ -313,13 +319,23 @@ document.addEventListener('DOMContentLoaded', function () {
 			let next = i === moduleAreasArr.length - 1 ? 0 : i + 1
 			for (let n = 0; n < moduleAreasArr.length; n++) {	
 				TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
-				TweenMax.to(moduleAreasArr[n].interactiveArea,  1.2, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
+				TweenMax.to(moduleAreasArr[n].interactiveArea,  1, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
 				moduleAreasArr[n].content.style.display = 'none'
 			}
 			TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
 			moduleAreasArr[i].content.style.display = 'block'
-			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea],  0.6, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
-			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.7, { opacity: 1, scale:1, ease: Power4.easeOut })
+			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea],  0.4, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
+			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.5, { opacity: 1, scale:1, ease: Power4.easeOut })
+		}
+
+		function defoltModuleView() {
+			// console.log('defoltModuleView()')
+			for (let n = 0; n < moduleAreasArr.length; n++) {	
+				TweenMax.killTweensOf(moduleAreasArr[n].interactiveArea)
+				TweenMax.to(moduleAreasArr[n].interactiveArea,  0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
+				moduleAreasArr[n].content.style.display = 'none'
+			}
+			moduleAreasArr[0].content.style.display = 'block'
 		}
 
 	}
