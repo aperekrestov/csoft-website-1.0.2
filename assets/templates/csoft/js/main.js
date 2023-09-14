@@ -266,48 +266,85 @@ document.addEventListener('DOMContentLoaded', function () {
 		// console.log('neractive-module')
 		let interactiveModule = document.getElementById('interactive-module')
 		let cgWrapper = interactiveModule.querySelector('.interactive-module__cg-container')
+		let errow = interactiveModule.querySelector('.interactive-module__errow')
 		let moduleAreasArr = [
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__pdm-area'),
-				'content': interactiveModule.querySelector('.interactive-module__pdm')
+				'content': interactiveModule.querySelector('.interactive-module__pdm'),
+				'spot': interactiveModule.querySelector('.interactive-module__pdm-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__pdm-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__pdm-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__pdm-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__tdm-area'),
-				'content': interactiveModule.querySelector('.interactive-module__tdm')
+				'content': interactiveModule.querySelector('.interactive-module__tdm'),
+				'spot': interactiveModule.querySelector('.interactive-module__tdm-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__tdm-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__tdm-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__tdm-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__capp-area'),
-				'content': interactiveModule.querySelector('.interactive-module__capp')
+				'content': interactiveModule.querySelector('.interactive-module__capp'),
+				'spot': interactiveModule.querySelector('.interactive-module__capp-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__capp-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__capp-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__capp-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__mps_aps-area'),
-				'content': interactiveModule.querySelector('.interactive-module__mps_aps')
+				'content': interactiveModule.querySelector('.interactive-module__mps_aps'),
+				'spot': interactiveModule.querySelector('.interactive-module__mps_aps-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__mps_aps-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__mps_aps-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__mps_aps-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__mrp-area'),
-				'content': interactiveModule.querySelector('.interactive-module__mrp')
+				'content': interactiveModule.querySelector('.interactive-module__mrp'),
+				'spot': interactiveModule.querySelector('.interactive-module__mrp-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__mrp-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__mrp-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__mrp-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__mes-area'),
-				'content': interactiveModule.querySelector('.interactive-module__mes')
+				'content': interactiveModule.querySelector('.interactive-module__mes'),
+				'spot': interactiveModule.querySelector('.interactive-module__mes-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__mes-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__mes-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__mes-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__eam-area'),
-				'content': interactiveModule.querySelector('.interactive-module__eam')
+				'content': interactiveModule.querySelector('.interactive-module__eam'),
+				'spot': interactiveModule.querySelector('.interactive-module__eam-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__eam-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__eam-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__eam-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__qm-area'),
-				'content': interactiveModule.querySelector('.interactive-module__qm')
+				'content': interactiveModule.querySelector('.interactive-module__qm'),
+				'spot': interactiveModule.querySelector('.interactive-module__qm-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__qm-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__qm-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__qm-line3')
 			},
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__plm_bi-area'),
-				'content': interactiveModule.querySelector('.interactive-module__plm_bi')
+				'content': interactiveModule.querySelector('.interactive-module__plm_bi'),
+				'spot': interactiveModule.querySelector('.interactive-module__plm_bi-spot'),
+				'line1': interactiveModule.querySelector('.interactive-module__plm_bi-line1'),
+				'line2': interactiveModule.querySelector('.interactive-module__plm_bi-line2'),
+				'line3': interactiveModule.querySelector('.interactive-module__plm_bi-line3')
 			},
 		]
 
-		defoltModuleView()
+		defoultModuleView()
 		cgWrapper.onmouseleave = function(e){
-			defoltModuleView()
+			defoultModuleView()
 		}
 
 		for (let i = 0; i < moduleAreasArr.length; i++) {
@@ -318,24 +355,47 @@ document.addEventListener('DOMContentLoaded', function () {
 			let prew = i === 0 ? moduleAreasArr.length - 1 : i - 1
 			let next = i === moduleAreasArr.length - 1 ? 0 : i + 1
 			for (let n = 0; n < moduleAreasArr.length; n++) {	
-				TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
 				TweenMax.to(moduleAreasArr[n].interactiveArea,  1, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
 				moduleAreasArr[n].content.style.display = 'none'
+
+				TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
+				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3],  0, { opacity: 0, scale: 0 })
+				TweenMax.to(moduleAreasArr[n].spot,  0, { opacity: 0, scale: 2 })
 			}
 			TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
 			moduleAreasArr[i].content.style.display = 'block'
 			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea],  0.4, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
 			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.5, { opacity: 1, scale:1, ease: Power4.easeOut })
+
+			TweenMax.to(errow, 0, { opacity: 0, y: -15, scale: 0 })
+			TweenMax.to(moduleAreasArr[i].spot, 0.5, { opacity: 1, scale:1, ease: Power1.easeOut })
+			TweenMax.to(moduleAreasArr[i].line1, moduleAreasArr[i].line1.clientHeight/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, 
+				onComplete: function() { 
+					//! console.log('1 - finish')
+					TweenMax.to(moduleAreasArr[i].line2, moduleAreasArr[i].line2.clientWidth/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, onComplete: function() {
+						//! console.log('2 - finish')
+						TweenMax.to(moduleAreasArr[i].line3, moduleAreasArr[i].line3.clientHeight/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, onComplete: function() {
+							TweenMax.to(errow, 0.25, { opacity: 1, scale:1 })
+							TweenMax.to(errow, 0.5, { y: 0, ease: Power4.easeOut })
+						} })
+					} })
+				} 
+			})
 		}
 
-		function defoltModuleView() {
-			// console.log('defoltModuleView()')
+		function defoultModuleView() {
 			for (let n = 0; n < moduleAreasArr.length; n++) {	
 				TweenMax.killTweensOf(moduleAreasArr[n].interactiveArea)
 				TweenMax.to(moduleAreasArr[n].interactiveArea,  0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
 				moduleAreasArr[n].content.style.display = 'none'
+
+				TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
+				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3],  0, { opacity: 0, scale: 0 })
+				TweenMax.to(moduleAreasArr[n].spot,  0, { opacity: 0, scale: 2 })
 			}
 			moduleAreasArr[0].content.style.display = 'block'
+			TweenMax.killTweensOf(errow)
+			TweenMax.to(errow, 0, { opacity: 0, y: -15, scale: 0 })
 		}
 
 	}
