@@ -266,7 +266,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		// console.log('neractive-module')
 		let interactiveModule = document.getElementById('interactive-module')
 		let cgWrapper = interactiveModule.querySelector('.interactive-module__cg-container')
-		let errow = interactiveModule.querySelector('.interactive-module__errow')
+		let triangle = interactiveModule.querySelector('.interactive-module__triangle')
+		let manufacture = interactiveModule.querySelector('.interactive-module__manufacture')
+		let product = interactiveModule.querySelector('.interactive-module__product')
 		let moduleAreasArr = [
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__pdm-area'),
@@ -342,128 +344,159 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		]
 
+		manufacture.onmouseover = function (e) {
+			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2', '.interactive-module__manufacture-arrow'])
+			TweenMax.to('.interactive-module__manufacture-1', .5, {scale: 0.95, x: 5, y: 5, opacity: 0.7, ease: Power4.easeOut })
+			TweenMax.to('.interactive-module__manufacture-2', .5, {scale: 1.1, ease: Power2.easeOut })
+			TweenMax.to('.interactive-module__manufacture-arrow', 1, {x: 3, ease: Power3.easeOut })
+		}
+		manufacture.onmouseleave = function (e) {
+			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2', '.interactive-module__manufacture-arrow'])
+			TweenMax.to(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2, .interactive-module__manufacture-arrow'], .3, { x:0, y: 0, scale: 1, opacity: 1, ease: Power1.easeInOut })
+		}
+
+		product.onmouseover = function (e) {
+			TweenMax.killTweensOf(['.interactive-module__product-1', '.interactive-module__product-2', '.interactive-module__product-arrow'])
+			TweenMax.to('.interactive-module__product-1', .5, {scale: 0.95, x: 5, y: 5, opacity: 0.7, ease: Power4.easeOut })
+			TweenMax.to('.interactive-module__product-2', .5, {scale: 1.1, ease: Power2.easeOut })
+			TweenMax.to('.interactive-module__product-arrow', 1, {x: 3, ease: Power3.easeOut })
+		}
+		product.onmouseleave = function (e) {
+			TweenMax.killTweensOf(['.interactive-module__product-1', '.interactive-module__product-2', '.interactive-module__product-arrow'])
+			TweenMax.to(['.interactive-module__product-1', '.interactive-module__product-2, .interactive-module__product-arrow'], .3, { x:0, y: 0, scale: 1, opacity: 1, ease: Power1.easeInOut })
+		}
+
 		defoultModuleView()
-		cgWrapper.onmouseleave = function(e){
+		cgWrapper.onmouseleave = function (e) {
 			defoultModuleView()
 		}
 
 		for (let i = 0; i < moduleAreasArr.length; i++) {
-			moduleAreasArr[i].interactiveArea.onmouseover = function(e) { moduleAreaOver(e, i) }	
+			moduleAreasArr[i].interactiveArea.onmouseover = function (e) { moduleAreaOver(e, i) }
 		}
-		
+
 		function moduleAreaOver(e, i) {
 			let prew = i === 0 ? moduleAreasArr.length - 1 : i - 1
 			let next = i === moduleAreasArr.length - 1 ? 0 : i + 1
-			for (let n = 0; n < moduleAreasArr.length; n++) {	
-				TweenMax.to(moduleAreasArr[n].interactiveArea,  1, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
+			for (let n = 0; n < moduleAreasArr.length; n++) {
+				TweenMax.to(moduleAreasArr[n].interactiveArea, 1, { opacity: 0.3, scale: 0.75, ease: Power1.easeOut })
 				moduleAreasArr[n].content.style.display = 'none'
 
 				TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
-				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3],  0, { opacity: 0, scale: 0 })
-				TweenMax.to(moduleAreasArr[n].spot,  0, { opacity: 0, scale: 2 })
+				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3], 0, { opacity: 0, scale: 0 })
+				TweenMax.to(moduleAreasArr[n].spot, 0, { opacity: 0, scale: 2 })
 			}
 			TweenMax.killTweensOf([moduleAreasArr[i].interactiveArea, moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea])
 			moduleAreasArr[i].content.style.display = 'block'
-			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea],  0.4, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
-			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.5, { opacity: 1, scale:1, ease: Power4.easeOut })
+			TweenMax.to([moduleAreasArr[prew].interactiveArea, moduleAreasArr[next].interactiveArea], 0.4, { opacity: 0.6, scale: 0.87, ease: Power2.easeOut })
+			TweenMax.to(moduleAreasArr[i].interactiveArea, 0.5, { opacity: 1, scale: 1, ease: Power4.easeOut })
 
-			TweenMax.to(errow, 0, { opacity: 0, y: -15, scale: 0 })
-			TweenMax.to(moduleAreasArr[i].spot, 0.5, { opacity: 1, scale:1, ease: Power1.easeOut })
-			TweenMax.to(moduleAreasArr[i].line1, moduleAreasArr[i].line1.clientHeight/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, 
-				onComplete: function() { 
+			TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
+			TweenMax.to(moduleAreasArr[i].spot, 0.5, { opacity: 1, scale: 1, ease: Power1.easeOut })
+			TweenMax.to(moduleAreasArr[i].line1, moduleAreasArr[i].line1.clientHeight / 1000, {
+				opacity: 1, scale: 1, ease: Power1.easeInOut,
+				onComplete: function () {
 					//! console.log('1 - finish')
-					TweenMax.to(moduleAreasArr[i].line2, moduleAreasArr[i].line2.clientWidth/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, onComplete: function() {
-						//! console.log('2 - finish')
-						TweenMax.to(moduleAreasArr[i].line3, moduleAreasArr[i].line3.clientHeight/1000, { opacity: 1, scale:1, ease: Power1.easeInOut, onComplete: function() {
-							TweenMax.to(errow, 0.25, { opacity: 1, scale:1 })
-							TweenMax.to(errow, 0.5, { y: 0, ease: Power4.easeOut })
-						} })
-					} })
-				} 
+					TweenMax.to(moduleAreasArr[i].line2, moduleAreasArr[i].line2.clientWidth / 1000, {
+						opacity: 1, scale: 1, ease: Power1.easeInOut, onComplete: function () {
+							//! console.log('2 - finish')
+							TweenMax.to(moduleAreasArr[i].line3, moduleAreasArr[i].line3.clientHeight / 1000, {
+								opacity: 1, scale: 1, ease: Power1.easeInOut, onComplete: function () {
+									TweenMax.to(triangle, 0.25, { opacity: 1, scale: 1 })
+									TweenMax.to(triangle, 0.5, { y: 0, ease: Power4.easeOut })
+								}
+							})
+						}
+					})
+				}
 			})
 		}
 
 		function defoultModuleView() {
-			for (let n = 0; n < moduleAreasArr.length; n++) {	
+			for (let n = 0; n < moduleAreasArr.length; n++) {
 				TweenMax.killTweensOf(moduleAreasArr[n].interactiveArea)
-				TweenMax.to(moduleAreasArr[n].interactiveArea,  0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
+				TweenMax.to(moduleAreasArr[n].interactiveArea, 0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
 				moduleAreasArr[n].content.style.display = 'none'
 
 				TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
-				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3],  0, { opacity: 0, scale: 0 })
-				TweenMax.to(moduleAreasArr[n].spot,  0, { opacity: 0, scale: 2 })
+				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3], 0, { opacity: 0, scale: 0 })
+				TweenMax.to(moduleAreasArr[n].spot, 0, { opacity: 0, scale: 2 })
 			}
 			moduleAreasArr[0].content.style.display = 'block'
-			TweenMax.killTweensOf(errow)
-			TweenMax.to(errow, 0, { opacity: 0, y: -15, scale: 0 })
+			TweenMax.killTweensOf(triangle)
+			TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
 		}
-
 	}
 
 
-	// //? интерактив/прилипание объектов к курсору
-	// if (document.querySelector('.topic-banner')) {
-	// 	let topicBanners = document.querySelectorAll('.topic-banner')
-	// 	topicBanners.forEach(topicBanner => {
-	// 		interactiveAction1(topicBanner)
-	// 	})
-	// }
-	// function interactiveAction1(theObject) {
-	// 	// ? анимация прилипания иконок к курсору пользователя
-	// 	theObject.addEventListener('mouseover', interactiveActivate)
-	// 	theObject.addEventListener('mouseout', interactiveDeactivate)
-	// 	let
-	// 		elem2,
-	// 		elem1 = theObject.querySelector('.elem-1'),
-	// 		mpos_left = 0,
-	// 		mpos_top = 0,
-	// 		mpos_block_left = 0,
-	// 		mpos_block_top = 0,
-	// 		numToRepositionX = 0,
-	// 		numToRepositionY = 0
-	// 		;
-	// 	if (typeof (theObject.querySelector('.elem-2')) != 'undefined' && theObject.querySelector('.elem-2') != null) {
-	// 		elem2 = theObject.querySelector('.elem-2')
-	// 	}
-
-	// 	function onMouseMove(event) {
-	// 		mpos_left = event.offsetX == undefined ? event.layerX : event.offsetX
-	// 		mpos_top = event.offsetY == undefined ? event.layerY : event.offsetY
-	// 		mpos_block_left = mpos_left - theObject.getBoundingClientRect().width
-	// 		mpos_block_top = mpos_top - theObject.getBoundingClientRect().height
-
-	// 		if (mpos_left < theObject.getBoundingClientRect().width / 2) {
-	// 			numToRepositionX = mpos_block_left - mpos_block_left / 2
-	// 		} else {
-	// 			numToRepositionX = mpos_left / 2
-	// 		}
-
-	// 		if (mpos_top < theObject.getBoundingClientRect().height / 2) {
-	// 			numToRepositionY = mpos_block_top - mpos_block_top / 2
-	// 		} else {
-	// 			numToRepositionY = mpos_top / 2
-	// 		}
-
-	// 		if (typeof (theObject.querySelector('.elem-2')) != 'undefined' && theObject.querySelector('.elem-2') != null) {
-	// 			TweenMax.to(elem2, 0.75, { x: numToRepositionX / 20, y: numToRepositionY / 20, ease: Power1.easeOut })
-	// 			TweenMax.to(elem1, 0.75, { x: numToRepositionX / 10, y: numToRepositionY / 10, ease: Power1.easeOut })
-	// 		} else {
-	// 			TweenMax.to(elem1, 0.75, { x: numToRepositionX / 3, y: numToRepositionY / 3, ease: Power1.easeOut })
-	// 		}
-	// 	}
-	// 	function interactiveActivate() {
-	// 		theObject.addEventListener('mousemove', onMouseMove)
-	// 	}
-	// 	function interactiveDeactivate() {
-	// 		theObject.removeEventListener('mousemove', onMouseMove)
-	// 	}
-	// }
 
 
 
 
 
-})
+		// //? интерактив/прилипание объектов к курсору
+		// if (document.querySelector('.topic-banner')) {
+		// 	let topicBanners = document.querySelectorAll('.topic-banner')
+		// 	topicBanners.forEach(topicBanner => {
+		// 		interactiveAction1(topicBanner)
+		// 	})
+		// }
+		// function interactiveAction1(theObject) {
+		// 	// ? анимация прилипания иконок к курсору пользователя
+		// 	theObject.addEventListener('mouseover', interactiveActivate)
+		// 	theObject.addEventListener('mouseout', interactiveDeactivate)
+		// 	let
+		// 		elem2,
+		// 		elem1 = theObject.querySelector('.elem-1'),
+		// 		mpos_left = 0,
+		// 		mpos_top = 0,
+		// 		mpos_block_left = 0,
+		// 		mpos_block_top = 0,
+		// 		numToRepositionX = 0,
+		// 		numToRepositionY = 0
+		// 		;
+		// 	if (typeof (theObject.querySelector('.elem-2')) != 'undefined' && theObject.querySelector('.elem-2') != null) {
+		// 		elem2 = theObject.querySelector('.elem-2')
+		// 	}
+
+		// 	function onMouseMove(event) {
+		// 		mpos_left = event.offsetX == undefined ? event.layerX : event.offsetX
+		// 		mpos_top = event.offsetY == undefined ? event.layerY : event.offsetY
+		// 		mpos_block_left = mpos_left - theObject.getBoundingClientRect().width
+		// 		mpos_block_top = mpos_top - theObject.getBoundingClientRect().height
+
+		// 		if (mpos_left < theObject.getBoundingClientRect().width / 2) {
+		// 			numToRepositionX = mpos_block_left - mpos_block_left / 2
+		// 		} else {
+		// 			numToRepositionX = mpos_left / 2
+		// 		}
+
+		// 		if (mpos_top < theObject.getBoundingClientRect().height / 2) {
+		// 			numToRepositionY = mpos_block_top - mpos_block_top / 2
+		// 		} else {
+		// 			numToRepositionY = mpos_top / 2
+		// 		}
+
+		// 		if (typeof (theObject.querySelector('.elem-2')) != 'undefined' && theObject.querySelector('.elem-2') != null) {
+		// 			TweenMax.to(elem2, 0.75, { x: numToRepositionX / 20, y: numToRepositionY / 20, ease: Power1.easeOut })
+		// 			TweenMax.to(elem1, 0.75, { x: numToRepositionX / 10, y: numToRepositionY / 10, ease: Power1.easeOut })
+		// 		} else {
+		// 			TweenMax.to(elem1, 0.75, { x: numToRepositionX / 3, y: numToRepositionY / 3, ease: Power1.easeOut })
+		// 		}
+		// 	}
+		// 	function interactiveActivate() {
+		// 		theObject.addEventListener('mousemove', onMouseMove)
+		// 	}
+		// 	function interactiveDeactivate() {
+		// 		theObject.removeEventListener('mousemove', onMouseMove)
+		// 	}
+		// }
+
+
+
+
+
+	})
 //? меню 
 if (document.querySelector('.menu__btn')) {
 	const MENU_BTN = document.querySelector('.menu__btn')
