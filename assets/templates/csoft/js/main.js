@@ -393,17 +393,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
 			TweenMax.to(moduleAreasArr[i].spot, 0.5, { opacity: 1, scale: 1, ease: Power1.easeOut })
-			TweenMax.to(moduleAreasArr[i].line1, moduleAreasArr[i].line1.clientHeight / 1000, {
+			//? скорость отноститедьно длинны линии: moduleAreasArr[i].line1.clientHeight / 1000
+			TweenMax.to(moduleAreasArr[i].line1, 0.2, {
 				opacity: 1, scale: 1, ease: Power1.easeInOut,
 				onComplete: function () {
 					//! console.log('1 - finish')
-					TweenMax.to(moduleAreasArr[i].line2, moduleAreasArr[i].line2.clientWidth / 1000, {
+					//? скорость отноститедьно длинны линии: moduleAreasArr[i].line2.clientWidth / 1000
+					TweenMax.to(moduleAreasArr[i].line2, 0.3, {
 						opacity: 1, scale: 1, ease: Power1.easeInOut, onComplete: function () {
 							//! console.log('2 - finish')
-							TweenMax.to(moduleAreasArr[i].line3, moduleAreasArr[i].line3.clientHeight / 1000, {
+							//? скорость отноститедьно длинны линии: moduleAreasArr[i].line3.clientHeight / 1000
+							TweenMax.to(moduleAreasArr[i].line3, 0.4, {
 								opacity: 1, scale: 1, ease: Power1.easeInOut, onComplete: function () {
-									TweenMax.to(triangle, 0.25, { opacity: 1, scale: 1 })
-									TweenMax.to(triangle, 0.5, { y: 0, ease: Power4.easeOut })
+									TweenMax.to(triangle, 0.2, { opacity: 1, scale: 1 })
+									TweenMax.to(triangle, 0.4, { y: 0, ease: Power4.easeOut })
 								}
 							})
 						}
