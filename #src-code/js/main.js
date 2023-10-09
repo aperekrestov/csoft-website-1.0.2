@@ -268,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		let cgWrapper = interactiveModule.querySelector('.interactive-module__cg-container')
 		let triangle = interactiveModule.querySelector('.interactive-module__triangle')
 		let manufacture = interactiveModule.querySelector('.interactive-module__manufacture')
-		let product = interactiveModule.querySelector('.interactive-module__product')
 		let moduleAreasArr = [
 			{
 				'interactiveArea': interactiveModule.querySelector('.interactive-module__pdm-area'),
@@ -344,29 +343,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		]
 
-		manufacture.onmouseover = function (e) {
-			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2', '.interactive-module__manufacture-arrow'])
-			TweenMax.to('.interactive-module__manufacture-1', .5, {scale: 0.95, x: 5, y: 5, opacity: 0.7, ease: Power4.easeOut })
-			TweenMax.to('.interactive-module__manufacture-2', .5, {scale: 1.1, ease: Power2.easeOut })
-			TweenMax.to('.interactive-module__manufacture-arrow', 1, {x: 3, ease: Power3.easeOut })
-		}
-		manufacture.onmouseleave = function (e) {
-			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2', '.interactive-module__manufacture-arrow'])
-			TweenMax.to(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2, .interactive-module__manufacture-arrow'], .3, { x:0, y: 0, scale: 1, opacity: 1, ease: Power1.easeInOut })
-		}
-
-		product.onmouseover = function (e) {
-			TweenMax.killTweensOf(['.interactive-module__product-1', '.interactive-module__product-2', '.interactive-module__product-arrow'])
-			TweenMax.to('.interactive-module__product-1', .5, {scale: 0.95, x: 5, y: 5, opacity: 0.7, ease: Power4.easeOut })
-			TweenMax.to('.interactive-module__product-2', .5, {scale: 1.1, ease: Power2.easeOut })
-			TweenMax.to('.interactive-module__product-arrow', 1, {x: 3, ease: Power3.easeOut })
-		}
-		product.onmouseleave = function (e) {
-			TweenMax.killTweensOf(['.interactive-module__product-1', '.interactive-module__product-2', '.interactive-module__product-arrow'])
-			TweenMax.to(['.interactive-module__product-1', '.interactive-module__product-2, .interactive-module__product-arrow'], .3, { x:0, y: 0, scale: 1, opacity: 1, ease: Power1.easeInOut })
-		}
-
 		defoultModuleView()
+		cgWrapper.onmouseover = function (e) {
+			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2'])
+			TweenMax.to('.interactive-module__manufacture-1', 0.5, { opacity: 0 })
+			TweenMax.to('.interactive-module__manufacture-2', 1.3, { opacity: 1 })
+		}
 		cgWrapper.onmouseleave = function (e) {
 			defoultModuleView()
 		}
@@ -428,6 +410,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			moduleAreasArr[0].content.style.display = 'block'
 			TweenMax.killTweensOf(triangle)
 			TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
+
+			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2'])
+			TweenMax.to('.interactive-module__manufacture-1', 1, { opacity: 1 })
+			TweenMax.to('.interactive-module__manufacture-2', 0.5, { opacity: 0 })
 		}
 	}
 
