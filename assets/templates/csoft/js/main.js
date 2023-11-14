@@ -398,18 +398,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 		function defoultModuleView() {
-			for (let n = 0; n < moduleAreasArr.length; n++) {
-				TweenMax.killTweensOf(moduleAreasArr[n].interactiveArea)
-				TweenMax.to(moduleAreasArr[n].interactiveArea, 0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
-				moduleAreasArr[n].content.style.display = 'none'
+			//? возвращение в дефолтное состояние частей бублика, приостанавливаем
+			// for (let n = 0; n < moduleAreasArr.length; n++) {
+			// 	TweenMax.killTweensOf(moduleAreasArr[n].interactiveArea)
+			// 	TweenMax.to(moduleAreasArr[n].interactiveArea, 0.6, { opacity: 1, scale: 1, ease: Power1.easeOut })
+			// 	moduleAreasArr[n].content.style.display = 'none'
 
-				TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
-				TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3], 0, { opacity: 0, scale: 0 })
-				TweenMax.to(moduleAreasArr[n].spot, 0, { opacity: 0, scale: 2 })
-			}
-			moduleAreasArr[0].content.style.display = 'block'
-			TweenMax.killTweensOf(triangle)
-			TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
+			// 	TweenMax.killTweensOf([moduleAreasArr[n].spot, moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3])
+			// 	TweenMax.to([moduleAreasArr[n].line1, moduleAreasArr[n].line2, moduleAreasArr[n].line3], 0, { opacity: 0, scale: 0 })
+			// 	TweenMax.to(moduleAreasArr[n].spot, 0, { opacity: 0, scale: 2 })
+			// }
+			// moduleAreasArr[0].content.style.display = 'block'
+			// TweenMax.killTweensOf(triangle)
+			// TweenMax.to(triangle, 0, { opacity: 0, y: -15, scale: 0 })
 
 			TweenMax.killTweensOf(['.interactive-module__manufacture-1', '.interactive-module__manufacture-2'])
 			TweenMax.to('.interactive-module__manufacture-1', 1, { opacity: 1 })
